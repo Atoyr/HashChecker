@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\private\source\HashChecker\obj\Debug\
+C:\private\source\HashChecker\source\obj\Debug\
 HashChecker
 none
 false
 CODE_ANALYSIS;DEBUG;TRACE
-C:\private\source\HashChecker\App.xaml
-21558266890
+C:\private\source\HashChecker\source\App.xaml
+2-62397058
 
-8-1434842503
-87669025059
-MainWindow.xaml;Resource\Styles.xaml;
+8-788304745
+86-850085222
+View\MainWindow.xaml;Style\Styles.xaml;
 
 False
 

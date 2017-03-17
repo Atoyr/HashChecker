@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
-  <Target Name="C:\private\source\HashChecker\bin\Debug\HashChecker.exe">
+  <Target Name="C:\private\source\HashChecker\source\bin\Debug\HashChecker.exe">
    <Modules>
     <Module Name="hashchecker.exe">
      <Namespaces>
@@ -12,8 +12,8 @@
          <Members>
           <Member Name="#AddHashValue`1(HashChecker.FileData,!!0)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-03-16 05:07:59Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="Warning" Path="C:\private\source\HashChecker\ViewModel" File="GridData.cs" Line="105">'GridData.AddHashValue&lt;T&gt;(FileData, T)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-03-17 09:17:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\private\source\HashChecker\source\ViewModel" File="GridData.cs" Line="105">'GridData.AddHashValue&lt;T&gt;(FileData, T)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
             </Message>
            </Messages>
           </Member>
