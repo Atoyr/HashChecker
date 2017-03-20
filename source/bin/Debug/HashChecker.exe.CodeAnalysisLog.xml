@@ -2,18 +2,65 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
-  <Target Name="C:\private\source\HashChecker\source\bin\Debug\HashChecker.exe">
+  <Target Name="C:\dev\source\HashChecker\source\bin\Debug\HashChecker.exe">
    <Modules>
     <Module Name="hashchecker.exe">
      <Namespaces>
       <Namespace Name="HashChecker">
        <Types>
-        <Type Name="GridData" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+        <Type Name="BindingGridData" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Members>
           <Member Name="#AddHashValue`1(HashChecker.FileData,!!0)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-03-17 09:17:39Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="Warning" Path="C:\private\source\HashChecker\source\ViewModel" File="GridData.cs" Line="105">'GridData.AddHashValue&lt;T&gt;(FileData, T)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2017-03-20 12:18:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\dev\source\HashChecker\source\ViewModel" File="BindingGridData.cs" Line="109">'BindingGridData.AddHashValue&lt;T&gt;(FileData, T)' は、アップストリームのパブリックな、または保護された呼び出し側を含んでいません。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="HashChecker.Command">
+       <Types>
+        <Type Name="ChangedMaxUsuallyBidirectionalWindowSize" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2017-03-20 12:18:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'ChangedMaxUsuallyBidirectionalWindowSize' は、インスタンス化されていない内部クラスです。その場合、コードをアセンブリから削除してください。このクラスが静的メソッドのみを含むことを意図されている場合、コンパイラが既定のコンストラクターを生成しないように、プライベート コンストラクターを追加することを考慮してください。</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#IsWindow(System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2017-03-20 12:18:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\dev\source\HashChecker\source\Command" File="ChangedMaxWindowSize.cs" Line="35">'ChangedMaxUsuallyBidirectionalWindowSize.IsWindow(object)' の 'this' パラメーター (Visual Basic では 'Me') は使用されていません。必要に応じて、メンバーを static (Visual Basic では Shared) に設定する、メソッドの本体で 'this'/'Me' を使用する、または少なくとも 1 つのプロパティ アクセサーを使用してください。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="HashChecker.View">
+       <Types>
+        <Type Name="BindingData" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2017-03-20 12:18:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'BindingData' は、インスタンス化されていない内部クラスです。その場合、コードをアセンブリから削除してください。このクラスが静的メソッドのみを含むことを意図されている場合、コンパイラが既定のコンストラクターを生成しないように、プライベート コンストラクターを追加することを考慮してください。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BindingData+WindowStatus" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2017-03-20 12:18:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'BindingData.WindowStatus' は、インスタンス化されていない内部クラスです。その場合、コードをアセンブリから削除してください。このクラスが静的メソッドのみを含むことを意図されている場合、コンパイラが既定のコンストラクターを生成しないように、プライベート コンストラクターを追加することを考慮してください。</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#WindowSizeIdentifier" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2017-03-20 12:18:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">フィールド 'BindingData.WindowStatus.WindowSizeIdentifier' が使用されていない、または割り当てられているだけのようです。このフィールドを使用するか、または削除してください。</Issue>
             </Message>
            </Messages>
           </Member>
@@ -35,6 +82,36 @@
    <Url>http://msdn.microsoft.com/library/ms182264.aspx</Url>
    <Email>[none]</Email>
    <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+   <Name>インスタンス化されていない内部クラスを使用しません</Name>
+   <Description>インスタンス化されていない内部クラスが検出されました。この規則は、遅延バインディングされた作成の検出を試行しない上、型のインスタンスがこの方法 (例: Activator.CreateInstance を使用して、またはその型を引数として TypeConverter コンストラクターに渡すことによって) で作成される場合にのみ、正しくない正当性を生成します。</Description>
+   <Resolution Name="Default">{0} は、インスタンス化されていない内部クラスです。その場合、コードをアセンブリから削除してください。このクラスが静的メソッドのみを含むことを意図されている場合、コンパイラが既定のコンストラクターを生成しないように、プライベート コンストラクターを追加することを考慮してください。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182265.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>使用されていないプライベート フィールドを使用しません</Name>
+   <Description>プライベート フィールドがアセンブリ内でアクセスされていないことを検出しました。この違反がエラーを発生させる場合、Visual Studio コード分析チームに問題報告を送信してください。</Description>
+   <Resolution Name="Default">フィールド {0} が使用されていない、または割り当てられているだけのようです。このフィールドを使用するか、または削除してください。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>メンバーを static に設定します</Name>
+   <Description>インスタンス データにアクセスしないメソッド、またはインスタンス メソッドを呼び出さないメソッドは、static (Visual Basic では Shared) に設定できます。この設定を行なうと、コンパイル時に非仮想呼び出しが生成され、実行時、各呼び出しに対して現在のオブジェクト ポインターが null でないことを確認するチェックを省きます。これによりパフォーマンスを要求されるコードでは大幅なパフォーマンスの改善が得られます。場合により、現在のオブジェクト インスタンスにアクセスできなかった際には正確性の問題が生じる可能性があります。</Description>
+   <Resolution Name="Default">{0} の 'this' パラメーター (Visual Basic では 'Me') は使用されていません。必要に応じて、メンバーを static (Visual Basic では Shared) に設定する、メソッドの本体で 'this'/'Me' を使用する、または少なくとも 1 つのプロパティ アクセサーを使用してください。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
    <File Name="performancerules.dll" Version="15.0.0.0" />
   </Rule>
  </Rules>

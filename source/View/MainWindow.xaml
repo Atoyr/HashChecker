@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HashChecker"
         mc:Ignorable="d"
-        Title="Hash" Height="300" Width="600">
+        Title="Hash" Height="300" Width="600" Name="mainWindow">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
                       ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
     </WindowChrome.WindowChrome>
     <Window.Resources>
-        <ResourceDictionary Source="/HashChecker;component/Style/Styles.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/HashChecker;component/Style/Styles.xaml" />
+                <ResourceDictionary Source="/HashChecker;component/Command/Command.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <Border BorderBrush="Red"
             BorderThickness="1" >
@@ -31,7 +36,9 @@
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top">
                 <Button Content="0" Style="{DynamicResource CaptionButtonStyleKey}" />
-                <Button Content="2" Style="{DynamicResource CaptionButtonStyleKey}" />
+                <Button Content="2" Style="{DynamicResource CaptionButtonStyleKey}" 
+                        Command="{Binding Source={StaticResource changedMaxUsuallyBidirectionalWindowSize}}"
+                        CommandParameter="{Binding ElementName=mainWindow}"/>
                 <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" />
             </StackPanel>
 
@@ -42,8 +49,10 @@
                 VerticalAlignment="Stretch" 
                 HorizontalAlignment="Stretch" 
                 Background="#AA888888" >
-                <MenuItem Header="ファイル(_F)">
-                    <MenuItem Header="閉じる(_C)" />
+                <MenuItem Header="ファイル(_F)" Background="#AA888888">
+                    <MenuItem Header="開く(_O)" Name="Menu_Open" Command="Open" Background="#AA888888"/>
+                    <MenuItem Header="比較(_M)" />
+                    <MenuItem Header="閉じる(_C)" Command="Close"/>
                 </MenuItem>
 
             </Menu>

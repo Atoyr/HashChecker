@@ -8,24 +8,28 @@ using Anaheim.Utility;
 
 namespace HashChecker
 {
-    public static class GridData
+    public static class BindingGridData
     {
         public static ObservableCollection<FileData> GetFileList(string folderPath, string searchPattern)
         {
-            var files = new DirectoryInfo(folderPath).EnumerateFiles(searchPattern, SearchOption.AllDirectories);
             var returnCollection = new ObservableCollection<FileData>();
-
-            foreach (FileInfo fi in files)
+            if (Directory.Exists(folderPath))
             {
-                returnCollection.Add(new FileData {
-                    FullName = fi.FullName,
-                    FullPath = Path.GetDirectoryName(fi.FullName),
-                    Path = Path.GetDirectoryName(fi.FullName).Replace(folderPath,string.Empty),
-                    Name = Path.GetFileName(fi.FullName),
-                    Extension = fi.Extension,
-                    UpdateDatetime = fi.LastWriteTime,
-                    Size = fi.Length
-                });
+                var files = new DirectoryInfo(folderPath).EnumerateFiles(searchPattern, SearchOption.AllDirectories);
+
+                foreach (FileInfo fi in files)
+                {
+                    returnCollection.Add(new FileData
+                    {
+                        FullName = fi.FullName,
+                        FullPath = Path.GetDirectoryName(fi.FullName),
+                        Path = Path.GetDirectoryName(fi.FullName).Replace(folderPath, string.Empty),
+                        Name = Path.GetFileName(fi.FullName),
+                        Extension = fi.Extension,
+                        UpdateDatetime = fi.LastWriteTime,
+                        Size = fi.Length
+                    });
+                }
             }
 
             return returnCollection;

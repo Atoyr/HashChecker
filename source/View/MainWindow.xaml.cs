@@ -14,8 +14,12 @@ namespace HashChecker
         public MainWindow()
         {
             this.InitializeComponent();
-            var data = GridData.GetMergeList(@"C:\release\test", @"C:\release\test2","*");
+
+            //this.DataContext
+            var data = BindingGridData.GetMergeList(@"C:\release\test", @"C:\release\test2","*");
             this.Grid.ItemsSource = data;
         }
+
+
     }
 }
