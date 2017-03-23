@@ -4,9 +4,10 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using Anaheim.Utility;
+using HashChecker.Model;
+//using Anaheim.Utility;
 
-namespace HashChecker
+namespace HashChecker.ViewModel
 {
     public static class BindingGridData
     {
@@ -103,11 +104,11 @@ namespace HashChecker
                     RightSize = r.Size
                 };
         }
- 
+
         private static void AddHashValue<T>(FileData fileData, T algorithm)
             where T : HashAlgorithm, new()
         {
-            fileData.Hash = Hash.ConvertHashString(Hash.GetHashFromFile(fileData.FullName, algorithm));
+            //fileData.Hash = Hash.ConvertHashString(Hash.GetHashFromFile(fileData.FullName, algorithm));
         }
     }
 }

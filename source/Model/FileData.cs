@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HashChecker
+namespace HashChecker.Model
 {
     public class FileData
     {

@@ -1,185 +1,86 @@
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\bin\Debug\HashChecker.exe.config
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\MainWindow.g.cs
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\App.g.cs
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker_MarkupCompile.cache
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker_MarkupCompile.lref
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\bin\Debug\HashChecker.exe
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\bin\Debug\HashChecker.pdb
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\bin\Debug\HashChecker.exe.CodeAnalysisLog.xml
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\bin\Debug\HashChecker.exe.lastcodeanalysissucceeded
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\bin\Debug\Anaheim.dll
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\MainWindow.baml
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker.g.resources
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker.Properties.Resources.resources
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker.csproj.GenerateResource.Cache
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker.exe
-c:\users\r.uchiyama.earth\documents\visual studio 2015\Projects\HashChecker\obj\Debug\HashChecker.pdb
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\Astonaige.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.AppContext.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Console.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Globalization.Calendars.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.IO.Compression.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.IO.FileSystem.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Net.Http.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Net.Sockets.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Xml.ReaderWriter.dll
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\obj\Debug\HashChecker.csprojResolveAssemblyReference.cache
-C:\Users\r.uchiyama.EARTH\Documents\Visual Studio 2015\Projects\HashChecker\obj\Debug\Resource\Styles.baml
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\HashChecker.exe.config
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\HashChecker.exe
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\HashChecker.pdb
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\HashChecker.exe.CodeAnalysisLog.xml
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\HashChecker.exe.lastcodeanalysissucceeded
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\Anaheim.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\Astonaige.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.AppContext.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Console.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Globalization.Calendars.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.IO.Compression.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.IO.FileSystem.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Net.Http.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Net.Sockets.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Xml.ReaderWriter.dll
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker.csprojResolveAssemblyReference.cache
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\MainWindow.g.cs
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\App.g.cs
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker_MarkupCompile.cache
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker_MarkupCompile.lref
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\MainWindow.baml
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\Resource\Styles.baml
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker.g.resources
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker.Properties.Resources.resources
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker.csproj.GenerateResource.Cache
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker.exe
-C:\Users\lessi\Downloads\HashChecker-20170315T124101Z-001\HashChecker\obj\Debug\HashChecker.pdb
-C:\private\source\HashChecker\bin\Debug\HashChecker.exe.config
-C:\private\source\HashChecker\bin\Debug\HashChecker.exe
-C:\private\source\HashChecker\bin\Debug\HashChecker.pdb
-C:\private\source\HashChecker\bin\Debug\HashChecker.exe.CodeAnalysisLog.xml
-C:\private\source\HashChecker\bin\Debug\HashChecker.exe.lastcodeanalysissucceeded
-C:\private\source\HashChecker\bin\Debug\Anaheim.dll
-C:\private\source\HashChecker\bin\Debug\Astonaige.dll
-C:\private\source\HashChecker\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\private\source\HashChecker\bin\Debug\System.AppContext.dll
-C:\private\source\HashChecker\bin\Debug\System.Console.dll
-C:\private\source\HashChecker\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\private\source\HashChecker\bin\Debug\System.Globalization.Calendars.dll
-C:\private\source\HashChecker\bin\Debug\System.IO.Compression.dll
-C:\private\source\HashChecker\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\private\source\HashChecker\bin\Debug\System.IO.FileSystem.dll
-C:\private\source\HashChecker\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\private\source\HashChecker\bin\Debug\System.Net.Http.dll
-C:\private\source\HashChecker\bin\Debug\System.Net.Sockets.dll
-C:\private\source\HashChecker\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\private\source\HashChecker\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\private\source\HashChecker\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\private\source\HashChecker\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\private\source\HashChecker\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\private\source\HashChecker\bin\Debug\System.Xml.ReaderWriter.dll
-C:\private\source\HashChecker\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\private\source\HashChecker\obj\Debug\HashChecker.csprojResolveAssemblyReference.cache
-C:\private\source\HashChecker\obj\Debug\MainWindow.g.cs
-C:\private\source\HashChecker\obj\Debug\App.g.cs
-C:\private\source\HashChecker\obj\Debug\HashChecker_MarkupCompile.cache
-C:\private\source\HashChecker\obj\Debug\HashChecker_MarkupCompile.lref
-C:\private\source\HashChecker\obj\Debug\MainWindow.baml
-C:\private\source\HashChecker\obj\Debug\Resource\Styles.baml
-C:\private\source\HashChecker\obj\Debug\HashChecker.g.resources
-C:\private\source\HashChecker\obj\Debug\HashChecker.Properties.Resources.resources
-C:\private\source\HashChecker\obj\Debug\HashChecker.csproj.GenerateResource.Cache
-C:\private\source\HashChecker\obj\Debug\HashChecker.exe
-C:\private\source\HashChecker\obj\Debug\HashChecker.pdb
-C:\private\source\HashChecker\source\bin\Debug\HashChecker.exe.config
-C:\private\source\HashChecker\source\bin\Debug\HashChecker.exe
-C:\private\source\HashChecker\source\bin\Debug\HashChecker.pdb
-C:\private\source\HashChecker\source\bin\Debug\HashChecker.exe.CodeAnalysisLog.xml
-C:\private\source\HashChecker\source\bin\Debug\HashChecker.exe.lastcodeanalysissucceeded
-C:\private\source\HashChecker\source\bin\Debug\Anaheim.dll
-C:\private\source\HashChecker\source\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\private\source\HashChecker\source\bin\Debug\System.AppContext.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Console.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Globalization.Calendars.dll
-C:\private\source\HashChecker\source\bin\Debug\System.IO.Compression.dll
-C:\private\source\HashChecker\source\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\private\source\HashChecker\source\bin\Debug\System.IO.FileSystem.dll
-C:\private\source\HashChecker\source\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Net.Http.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Net.Sockets.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Xml.ReaderWriter.dll
-C:\private\source\HashChecker\source\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\private\source\HashChecker\source\obj\Debug\HashChecker.csprojResolveAssemblyReference.cache
-C:\private\source\HashChecker\source\obj\Debug\View\MainWindow.g.cs
-C:\private\source\HashChecker\source\obj\Debug\App.g.cs
-C:\private\source\HashChecker\source\obj\Debug\HashChecker_MarkupCompile.cache
-C:\private\source\HashChecker\source\obj\Debug\HashChecker_MarkupCompile.lref
-C:\private\source\HashChecker\source\obj\Debug\View\MainWindow.baml
-C:\private\source\HashChecker\source\obj\Debug\Style\Styles.baml
-C:\private\source\HashChecker\source\obj\Debug\HashChecker.g.resources
-C:\private\source\HashChecker\source\obj\Debug\HashChecker.Properties.Resources.resources
-C:\private\source\HashChecker\source\obj\Debug\HashChecker.csproj.GenerateResource.Cache
-C:\private\source\HashChecker\source\obj\Debug\HashChecker.exe
-C:\private\source\HashChecker\source\obj\Debug\HashChecker.pdb
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker.csprojResolveAssemblyReference.cache
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\App.g.cs
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker_MarkupCompile.cache
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker_MarkupCompile.lref
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\HashChecker.exe.config
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\HashChecker.exe
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\HashChecker.pdb
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\MetroRadiance.Chrome.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\MetroRadiance.Core.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\MetroRadiance.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\Microsoft.Expression.Interactions.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\System.Windows.Interactivity.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\MetroRadiance.xml
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\MetroRadiance.Chrome.xml
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\MetroRadiance.Core.xml
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\de\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\en\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\es\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\it\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\App.baml
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker.g.resources
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker.Properties.Resources.resources
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker.csproj.GenerateResource.Cache
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker.exe
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\HashChecker.pdb
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\UI\MainWindow.g.cs
+c:\users\lessi\documents\visual studio 2017\Projects\HashChecker\HashChecker\obj\Debug\UI\MainWindow.baml
 C:\dev\source\HashChecker\source\bin\Debug\HashChecker.exe.config
 C:\dev\source\HashChecker\source\bin\Debug\HashChecker.exe
 C:\dev\source\HashChecker\source\bin\Debug\HashChecker.pdb
-C:\dev\source\HashChecker\source\bin\Debug\HashChecker.exe.CodeAnalysisLog.xml
-C:\dev\source\HashChecker\source\bin\Debug\HashChecker.exe.lastcodeanalysissucceeded
-C:\dev\source\HashChecker\source\bin\Debug\Anaheim.dll
-C:\dev\source\HashChecker\source\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.AppContext.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Console.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Globalization.Calendars.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.IO.Compression.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.IO.FileSystem.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Net.Http.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Net.Sockets.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Xml.ReaderWriter.dll
-C:\dev\source\HashChecker\source\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\dev\source\HashChecker\source\bin\Debug\MetroRadiance.Chrome.dll
+C:\dev\source\HashChecker\source\bin\Debug\MetroRadiance.Core.dll
+C:\dev\source\HashChecker\source\bin\Debug\MetroRadiance.dll
+C:\dev\source\HashChecker\source\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\dev\source\HashChecker\source\bin\Debug\System.Windows.Interactivity.dll
+C:\dev\source\HashChecker\source\bin\Debug\MetroRadiance.xml
+C:\dev\source\HashChecker\source\bin\Debug\MetroRadiance.Chrome.xml
+C:\dev\source\HashChecker\source\bin\Debug\MetroRadiance.Core.xml
+C:\dev\source\HashChecker\source\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\dev\source\HashChecker\source\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker.csprojResolveAssemblyReference.cache
-C:\dev\source\HashChecker\source\obj\Debug\View\MainWindow.g.cs
+C:\dev\source\HashChecker\source\obj\Debug\UI\MainWindow.g.cs
 C:\dev\source\HashChecker\source\obj\Debug\App.g.cs
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker_MarkupCompile.cache
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker_MarkupCompile.lref
-C:\dev\source\HashChecker\source\obj\Debug\View\MainWindow.baml
-C:\dev\source\HashChecker\source\obj\Debug\Style\Styles.baml
+C:\dev\source\HashChecker\source\obj\Debug\App.baml
+C:\dev\source\HashChecker\source\obj\Debug\UI\MainWindow.baml
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker.g.resources
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker.Properties.Resources.resources
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker.csproj.GenerateResource.Cache
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker.exe
 C:\dev\source\HashChecker\source\obj\Debug\HashChecker.pdb
-C:\dev\source\HashChecker\source\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\dev\source\HashChecker\source\obj\Debug\Command\Command.baml
