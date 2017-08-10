@@ -1,4 +1,4 @@
-﻿using HashChecker.Controls;
+﻿using MetroRadiance.UI.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +11,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HashChecker.Views
 {
     /// <summary>
-    /// MainPageView.xaml の相互作用ロジック
+    /// SubWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainPageView : BasePanel
+    public partial class SubWindow : MetroWindow
     {
-        public MainPageView()
+        public SubWindow()
         {
             InitializeComponent();
         }

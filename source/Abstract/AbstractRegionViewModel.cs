@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HashChecker.Abstract
 {
-    class AbstractRegionViewModel : AbstractViewModel, INavigationAware
+    public class AbstractRegionViewModel : AbstractViewModel, INavigationAware
     {
         /// <summary>
         /// Regionの切り替え時、Viewを再利用するか

@@ -11,31 +11,66 @@ namespace HashChecker.Common
 {
     public static class NavigationHelper
     {
+
         public static void LoadModule(string moduleName)
         {
             var moduleManager = ServiceLocator.Current.GetInstance<IModuleManager>();
             moduleManager.LoadModule(moduleName);
         }
 
+        /// <summary>
+        /// メインウィンドウRegionのNavigation
+        /// </summary>
+        /// <param name="regionName">対象Region</param>
+        /// <param name="source">移動先</param>
         public static void RequestNavigate(string regionName,string source)
         {
-            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            regionManager.RequestNavigate(regionName, source);
+            RequestNavigate(ServiceLocator.Current.GetInstance<IRegionManager>(), regionName, source);
+        }
+
+        /// <summary>
+        /// メインウィンドウRegionのNavigation
+        /// </summary>
+        /// <param name="regionManager">Navigationを実行するRegionManager</param>
+        /// <param name="regionName">対象Region</param>
+        /// <param name="source">移動先</param>
+        public static void RequestNavigate(IRegionManager regionManager,string regionName ,string source)
+        {
+            if(regionManager != null && !string.IsNullOrEmpty(regionName))
+            {
+                regionManager.RequestNavigate(regionName, source);
+            }
         }
 
         public static void RequestNavigate(string regionName,string source, NavigationParameters param)
         {
-            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            regionManager.RequestNavigate(regionName, source,param);
+            RequestNavigate(ServiceLocator.Current.GetInstance<IRegionManager>(), regionName, source, param);
+        }
+
+        public static void RequestNavigate(IRegionManager regionManager, string regionName, string source, NavigationParameters param)
+        {
+            if (regionManager != null && !string.IsNullOrEmpty(regionName))
+            {
+                regionManager.RequestNavigate(regionName, source, param);
+            }
         }
 
         public static void NavigateGoBack(string regionName)
         {
-            var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-            if (regionManager.Regions[regionName].NavigationService.Journal.CanGoBack)
+            NavigateGoBack(ServiceLocator.Current.GetInstance<IRegionManager>(),regionName);
+        }
+
+        public static void NavigateGoBack(IRegionManager regionManager, string regionName)
+        {
+            if (regionManager != null && !string.IsNullOrEmpty(regionName))
             {
-                regionManager.Regions[regionName].NavigationService.Journal.GoBack();
+                if (regionManager.Regions[regionName].NavigationService.Journal.CanGoBack)
+                {
+                    regionManager.Regions[regionName].NavigationService.Journal.GoBack();
+                }
             }
         }
+
+        //public static void 
     }
 }

@@ -95,20 +95,28 @@
     </ApplicationDefinition>
     <Compile Include="Abstract\AbstractRegionViewModel.cs" />
     <Compile Include="Abstract\AbstractRequestAwareViewModel.cs" />
+    <Compile Include="Abstract\AbstractSubWindowPanelViewModel.cs" />
     <Compile Include="Abstract\AbstractViewModel.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
-    <Compile Include="Controls\MetroPopupWindowAction.cs" />
+    <Compile Include="Common\ShowModalWindowAction.cs" />
+    <Compile Include="Common\WindowCloseAction.cs" />
+    <Compile Include="Controls\BasePanel.cs" />
+    <Compile Include="Controls\MainWindowPanel.xaml.cs">
+      <DependentUpon>MainWindowPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SubWindowPanel.xaml.cs">
+      <DependentUpon>SubWindowPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Enums\CheckErrorType.cs" />
+    <Compile Include="Enums\Regions.cs" />
     <Compile Include="HashCheckerModule.cs" />
-    <Compile Include="Interfaces\IMessage.cs" />
     <Compile Include="Interfaces\IOpenFolderValues.cs" />
-    <Compile Include="Messenger\Message.cs" />
-    <Compile Include="Messenger\MessageEventArgs.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\MergeData.cs" />
     <Compile Include="Models\BindingGridData.cs" />
     <Compile Include="Util\DirectoryUtil.cs" />
+    <Compile Include="ViewModels\MenuOpenViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\MenuOpenWindow.xaml.cs">
       <DependentUpon>MenuOpenWindow.xaml</DependentUpon>
@@ -119,6 +127,26 @@
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SubWindow.xaml.cs">
+      <DependentUpon>SubWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\MainWindowPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SubWindowPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.BasePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MainPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,4 @@
-﻿using HashChecker.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,16 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HashChecker.Views
+namespace HashChecker.Controls
 {
-    /// <summary>
-    /// MainPageView.xaml の相互作用ロジック
-    /// </summary>
-    public partial class MainPageView : BasePanel
+
+    public class BasePanel : UserControl
     {
-        public MainPageView()
+        static BasePanel()
         {
-            InitializeComponent();
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(BasePanel), new FrameworkPropertyMetadata(typeof(BasePanel)));
         }
     }
 }

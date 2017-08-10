@@ -11,22 +11,24 @@ using System.Windows.Input;
 
 namespace HashChecker.ViewModels
 {
-    public class ShellViewModel : AbstractViewModel
+    public class ShellViewModel 
     {
-        private ICommand openCommand;
-        public ICommand OpenCommand { set => SetProperty(ref openCommand, value); get => openCommand; }
+        //    public InteractionRequest<INotification> OpenForderNotificationRequest { get; } = new InteractionRequest<INotification>();
 
-        public InteractionRequest<OpenForderNotification> OpenForderNotificationRequest { get; } = new InteractionRequest<OpenForderNotification>();
+        //    public DelegateCommand ShowWindowCommand { get; private set; }
 
-        public override void Initialize()
-        {
-            base.Initialize();
-            OpenCommand = new DelegateCommand(() => this.OpenForderNotificationExecute());
-        }
+        //    public override void Initialize()
+        //    {
+        //        base.Initialize();
 
-        private void OpenForderNotificationExecute()
-        {
-            this.OpenForderNotificationRequest.Raise(new OpenForderNotification { Title = "aaaa" });
-        }
+        //         this.ShowWindowCommand = new DelegateCommand(() =>
+        //        {
+        //            this.OpenForderNotificationRequest.Raise(new Notification
+        //            {
+        //                Title = "Hello",
+        //                Content = "Sample",
+        //            });
+        //        });
+        //    }
     }
 }
