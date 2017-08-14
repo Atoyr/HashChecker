@@ -23,8 +23,7 @@ namespace HashChecker.ViewModels
            {
                this.OpenForderNotificationRequest.Raise(new Notification
                {
-                   Title = "Hello",
-                   Content = "Sample",
+                   Title = "ファイルを開く",
                });
            });
         }

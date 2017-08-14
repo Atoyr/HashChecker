@@ -12,8 +12,8 @@
     xmlns:localControls="clr-namespace:HashChecker.Controls"
     xmlns:common="clr-namespace:HashChecker.Common"
     xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d" 
-    Background="Aqua"
     d:DesignHeight="768" d:DesignWidth="1024">
     <i:Interaction.Triggers>
         <prism:InteractionRequestTrigger SourceObject="{Binding OpenForderNotificationRequest}">
@@ -21,7 +21,6 @@
         </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />

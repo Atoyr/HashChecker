@@ -8,6 +8,7 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:common="clr-namespace:HashChecker.Common"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d" 
     Foreground="White"
     Width="512"
@@ -31,22 +32,37 @@
                 <Label Content="比較するファイルまたはフォルダ" Foreground="WhiteSmoke"/>
             </StackPanel>
             <DockPanel LastChildFill="True" Margin="3">
-                <Label Style="{StaticResource TitleLabelStyle}" Content="1" />
-                <ComboBox IsEditable="True" Text="{Binding Text}"/>
+                <Label 
+                    Style="{StaticResource TitleLabelStyle}" 
+                    Content="1" />
+                <ComboBox
+                    IsEditable="True" 
+                    ItemsSource="{Binding FirstFolderPathHistory}"
+                    Text="{Binding FirstFolderPath}"/>
             </DockPanel>
             <DockPanel>
                 <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">参照</Button>
             </DockPanel>
             <DockPanel LastChildFill="True" Margin="3">
-                <Label Style="{StaticResource TitleLabelStyle}" Content="2" />
-                <ComboBox IsEditable="True" />
+                <Label 
+                    Style="{StaticResource TitleLabelStyle}" 
+                    Content="2" />
+                <ComboBox
+                    IsEditable="True" 
+                    ItemsSource="{Binding SecondFolderPathHistory}"
+                    Text="{Binding SecondFolderPath}"/>
             </DockPanel>
             <DockPanel>
                 <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">ひらく</Button>
             </DockPanel>
             <DockPanel LastChildFill="True" Margin="3">
-                <Label Style="{StaticResource TitleLabelStyle}" Content="フィルタ パターン" />
-                <ComboBox IsEditable="True" />
+                <Label 
+                    Style="{StaticResource TitleLabelStyle}" 
+                    Content="フィルタ パターン" />
+                <ComboBox
+                    IsEditable="True" 
+                    ItemsSource="{Binding FilterHistory}"
+                    Text="{Binding Filter}"/>
             </DockPanel>
             <DockPanel>
                 <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">選択</Button>
