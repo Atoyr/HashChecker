@@ -39,6 +39,8 @@
                 <MenuItem Header="閉じる(_C)" Command="Close"/>
             </MenuItem>
         </Menu>
-        <DataGrid Grid.Row="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <DataGrid Grid.Row="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GridData}">
+            
+        </DataGrid>
     </Grid>
 </localControls:BasePanel>

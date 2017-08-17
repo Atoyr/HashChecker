@@ -43,7 +43,7 @@ namespace HashChecker.Models
         /// <param name="rightFolderPath"></param>
         /// <param name="searchPattern"></param>
         /// <returns></returns>
-        public static ObservableCollection<MergeData> GetMergeList(string leftFolderPath, string rightFolderPath, string searchPattern)
+        public static IEnumerable<MergeData> GetMergeList(string leftFolderPath, string rightFolderPath, string searchPattern)
         {
             var leftFileList = FileData.GetFileEnumerate(leftFolderPath, searchPattern);
             var rightFileList = FileData.GetFileEnumerate(rightFolderPath, searchPattern);
@@ -51,7 +51,7 @@ namespace HashChecker.Models
             // 左外部結合と右外部結合を取得、マージする
             var leftOuter = FileDataLeftOuterJoin(leftFileList, rightFileList);
             var rightOuter = FileDataRightOuterJoin(leftFileList, rightFileList);
-            return new ObservableCollection<MergeData>(leftOuter.Union(rightOuter, new MergeDataPathComparer()));
+            return leftOuter.Union(rightOuter, new MergeDataPathComparer());
         }
 
         /// <summary>

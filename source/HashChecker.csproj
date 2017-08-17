@@ -86,6 +86,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Wpf.6.3.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -117,20 +118,20 @@
     <Compile Include="Common\ShowModalWindowAction.cs" />
     <Compile Include="Common\WindowCloseAction.cs" />
     <Compile Include="Controls\BasePanel.cs" />
-    <Compile Include="Controls\MainWindowPanel.xaml.cs">
-      <DependentUpon>MainWindowPanel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SubWindowPanel.xaml.cs">
-      <DependentUpon>SubWindowPanel.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Enums\CheckErrorType.cs" />
     <Compile Include="Enums\Regions.cs" />
+    <Compile Include="Events\FolderOpenEvent.cs" />
+    <Compile Include="Events\FolderOpenValue.cs" />
     <Compile Include="HashCheckerModule.cs" />
-    <Compile Include="Interfaces\IOpenFolderValues.cs" />
+    <Compile Include="Interfaces\IFolderOpenProvider.cs" />
+    <Compile Include="Interfaces\IFolderOpenPublisher.cs" />
+    <Compile Include="Interfaces\IFolderOpenValue.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\MergeData.cs" />
     <Compile Include="Models\BindingGridData.cs" />
     <Compile Include="Util\DirectoryUtil.cs" />
+    <Compile Include="Util\HashUtil.cs" />
+    <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="ViewModels\MenuOpenViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\MenuOpenWindow.xaml.cs">
@@ -145,14 +146,6 @@
     <Compile Include="Views\SubWindow.xaml.cs">
       <DependentUpon>SubWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\MainWindowPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\SubWindowPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Themes\Generic.BasePanel.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>

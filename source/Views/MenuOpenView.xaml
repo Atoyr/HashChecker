@@ -41,7 +41,12 @@
                     Text="{Binding FirstFolderPath}"/>
             </DockPanel>
             <DockPanel>
-                <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">参照</Button>
+                <Button 
+                    DockPanel.Dock="Right" 
+                    Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black"
+                    Command="{Binding FolderOpenDialogCommand}" CommandParameter="First">
+                    参照
+                </Button>
             </DockPanel>
             <DockPanel LastChildFill="True" Margin="3">
                 <Label 
@@ -53,7 +58,12 @@
                     Text="{Binding SecondFolderPath}"/>
             </DockPanel>
             <DockPanel>
-                <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">ひらく</Button>
+                <Button 
+                    DockPanel.Dock="Right" 
+                    Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black"
+                    Command="{Binding FolderOpenDialogCommand}" CommandParameter="Second">
+                    参照
+                </Button>
             </DockPanel>
             <DockPanel LastChildFill="True" Margin="3">
                 <Label 

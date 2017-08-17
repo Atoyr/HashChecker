@@ -1,4 +1,6 @@
 ﻿using HashChecker.Abstract;
+using HashChecker.Events;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using Prism.Commands;
 using Prism.Interactivity.InteractionRequest;
 using System;
@@ -15,7 +17,14 @@ namespace HashChecker.ViewModels
         public InteractionRequest<INotification> WindowCloseRequest { get; } = new InteractionRequest<INotification>();
 
         public DelegateCommand WindowCloseCommand { get; private set; }
-        public DelegateCommand FileOpenDialogCommand { get; private set; }
+        public DelegateCommand<string> FolderOpenDialogCommand { get; private set; }
+
+        enum FolderNo
+        {
+            None = 0,
+            First = 1,
+            Second = 2,            
+        }
 
         private string firstFolderPath = string.Empty;
         private string secondFolderPath = string.Empty;
@@ -31,18 +40,55 @@ namespace HashChecker.ViewModels
         public override void Initialize()
         {
             base.Initialize();
+            this.CommandInitialize();
         }
 
         public void CommandInitialize()
         {
             this.WindowCloseCommand = new DelegateCommand(() =>
             {
+                EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = this.FirstFolderPath ,SecondFolderPath = this.SecondFolderPath ,SearchPattern = this.Filter });
                 this.WindowCloseRequest.Raise(new Notification());
+            });
+            this.FolderOpenDialogCommand = new DelegateCommand<string>((param) =>
+            {
+                switch (param)
+                {
+                    case "First":
+                        this.FileOpen(FolderNo.First);
+                        break;
+                    case "Second":
+                        this.FileOpen(FolderNo.Second);
+                        break;
+                    default:
+                        break;
+                }
             });
         }
 
-        private void FileOpen()
+        private void FileOpen(FolderNo folderNo)
         {
+            // ダイアログのインスタンスを生成
+            var dialog = new CommonOpenFileDialog("フォルダーの選択");
+
+            // 選択形式をフォルダースタイルにする IsFolderPicker プロパティを設定
+            dialog.IsFolderPicker = true;
+
+            // ダイアログを表示
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                switch (folderNo)
+                {
+                    case FolderNo.First:
+                        FirstFolderPath = dialog.FileName;
+                        break;
+                    case FolderNo.Second:
+                        SecondFolderPath = dialog.FileName;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

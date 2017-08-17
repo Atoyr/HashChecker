@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashChecker.Interfaces
 {
-    interface IOpenFolderValues
+    public interface IFolderOpenValue
     {
         string FirstFolderPath { set; get; }
         string SecondFolderPath { set; get; }        
