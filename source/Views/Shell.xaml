@@ -73,7 +73,20 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <controls:ResizeGrip Grid.Column="1" />
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock 
+                    x:Name="PART_StatusBarMessage"
+                    Text="{Binding StatusBar.Message}" />
+            </StackPanel>
+            <ProgressBar 
+                    x:Name="PART_StatusBarProgressBar"
+                Grid.Column="1" Width="150" Height="10" 
+                VerticalAlignment="Center"
+                Minimum="{Binding StatusBar.ProgressBarMinimum}"
+                Maximum="{Binding StatusBar.ProgressBarMaximum}"
+                Value="{Binding StatusBar.ProgressBarValue}"
+                IsIndeterminate="{Binding StatusBar.ProgressBarIsIndeterminate}"/>
+            <!--<controls:ResizeGrip Grid.Column="1" />-->
         </Grid>
     </Grid>
 </controls:MetroWindow>

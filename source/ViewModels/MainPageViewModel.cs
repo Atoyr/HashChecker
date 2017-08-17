@@ -44,6 +44,10 @@ namespace HashChecker.ViewModels
         
         private void FolderOpen(IFolderOpenValue value)
         {
+            if(EventAggregator != null)
+            {
+                EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
+            }
             GridData = new ObservableCollection<MergeData>(BindingGridData.GetMergeList(value.FirstFolderPath, value.SecondFolderPath, value.SearchPattern));
         }
     }

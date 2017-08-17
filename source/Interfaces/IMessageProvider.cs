@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace HashChecker.Interfaces
 {
-    public interface IFolderOpenProvider : INotifyPropertyChanged
+    interface IMessageProvider : INotifyPropertyChanged
     {
-        IFolderOpenValue Value { get; }
+        IMessageValue Value { set; get; }
     }
 }
