@@ -55,6 +55,17 @@ namespace HashChecker.Logics
             return leftOuter.Union(rightOuter, new MergeDataPathComparer());
         }
 
+        public static IEnumerable<MergeData> GetMergeListAsync(string leftFolderPath, string rightFolderPath, string searchPattern)
+        {
+            var leftFileList = FileData.GetFileEnumerate(leftFolderPath, searchPattern);
+            var rightFileList = FileData.GetFileEnumerate(rightFolderPath, searchPattern);
+
+            // 左外部結合と右外部結合を取得、マージする
+            var leftOuter = FileDataLeftOuterJoin(leftFileList, rightFileList);
+            var rightOuter = FileDataRightOuterJoin(leftFileList, rightFileList);
+            return leftOuter.Union(rightOuter, new MergeDataPathComparer());
+        }
+
         /// <summary>
         /// 左結合
         /// </summary>

@@ -221,6 +221,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resouces\" />
     <Folder Include="Style\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

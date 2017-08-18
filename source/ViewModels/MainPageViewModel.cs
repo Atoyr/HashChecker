@@ -43,8 +43,9 @@ namespace HashChecker.ViewModels
             });
         }
         
-        private void FolderOpen(IFolderOpenValue value)
+        private async Task FolderOpen(IFolderOpenValue value)
         {
+            
             if(EventAggregator != null)
             {
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
