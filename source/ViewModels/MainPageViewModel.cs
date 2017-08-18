@@ -1,6 +1,7 @@
 ﻿using HashChecker.Abstract;
 using HashChecker.Events;
 using HashChecker.Interfaces;
+using HashChecker.Logics;
 using HashChecker.Models;
 using Microsoft.Practices.ServiceLocation;
 using Prism.Commands;

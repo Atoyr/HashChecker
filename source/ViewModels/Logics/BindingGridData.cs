@@ -1,11 +1,12 @@
-﻿using System;
+﻿using HashChecker.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 
-namespace HashChecker.Models
+namespace HashChecker.Logics
 {
     public static class BindingGridData
     {

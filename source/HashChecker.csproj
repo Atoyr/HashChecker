@@ -135,7 +135,7 @@
     <Compile Include="Interfaces\IMessageValue.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\MergeData.cs" />
-    <Compile Include="Models\BindingGridData.cs" />
+    <Compile Include="ViewModels\Logics\BindingGridData.cs" />
     <Compile Include="Util\DirectoryUtil.cs" />
     <Compile Include="Util\HashUtil.cs" />
     <Compile Include="Util\JsonUtil.cs" />
@@ -170,7 +170,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\OpenForderNotification.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>

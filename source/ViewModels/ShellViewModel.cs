@@ -24,6 +24,7 @@ namespace HashChecker.ViewModels
         public override void Initialize()
         {
             base.Initialize();
+            RegistEventSubscribe();
             StatusBar = new StatusBar { Message = "準備完了" };
         }
 
