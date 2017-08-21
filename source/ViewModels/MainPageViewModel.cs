@@ -29,7 +29,7 @@ namespace HashChecker.ViewModels
         {
             base.Initialize();
             InitializeCommand();
-            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<FolderOpenEvent>().Subscribe(FolderOpen);
+            ServiceLocator.Current.GetInstance<IEventAggregator>().GetEvent<FolderOpenEvent>().Subscribe(FolderOpen,ThreadOption.BackgroundThread);
         }
 
         private void InitializeCommand()
@@ -43,7 +43,7 @@ namespace HashChecker.ViewModels
             });
         }
         
-        private async Task FolderOpen(IFolderOpenValue value)
+        private void FolderOpen(IFolderOpenValue value)
         {
             
             if(EventAggregator != null)
@@ -51,6 +51,10 @@ namespace HashChecker.ViewModels
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
             }
             GridData = new ObservableCollection<MergeData>(BindingGridData.GetMergeList(value.FirstFolderPath, value.SecondFolderPath, value.SearchPattern));
+            if (EventAggregator != null)
+            {
+                EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "準備完了" });
+            }
         }
     }
 }

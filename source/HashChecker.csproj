@@ -120,6 +120,7 @@
     <Compile Include="Contexts\StatusBar.cs" />
     <Compile Include="Controls\BasePanel.cs" />
     <Compile Include="Enums\CheckErrorType.cs" />
+    <Compile Include="Enums\MergeResult.cs" />
     <Compile Include="Enums\Regions.cs" />
     <Compile Include="Events\FolderOpenEvent.cs" />
     <Compile Include="Events\FolderOpenValue.cs" />
@@ -135,6 +136,9 @@
     <Compile Include="Interfaces\IMessageValue.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\MergeData.cs" />
+    <Compile Include="Models\SystemSetting.cs" />
+    <Compile Include="Models\UserSetting.cs" />
+    <Compile Include="Util\FileUtil.cs" />
     <Compile Include="ViewModels\Logics\BindingGridData.cs" />
     <Compile Include="Util\DirectoryUtil.cs" />
     <Compile Include="Util\HashUtil.cs" />

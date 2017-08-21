@@ -39,8 +39,32 @@
                 <MenuItem Header="閉じる(_C)" Command="Close"/>
             </MenuItem>
         </Menu>
-        <DataGrid Grid.Row="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding GridData}">
-            
+        <DataGrid 
+            Grid.Row="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            CanUserResizeColumns="False"
+            ItemsSource="{Binding GridData}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ファイルパス" Binding="{Binding Path}" />
+                <DataGridTextColumn Header="比較結果" Binding="{Binding MergeResult}" />
+                <DataGridTextColumn Header="左 ファイルフル名" Binding="{Binding LeftFullName}" />
+                <DataGridTextColumn Header="左 フォルダパス" Binding="{Binding LeftFullPath}" />
+                <DataGridTextColumn Header="左 ファイル名" Binding="{Binding LeftName}" />
+                <DataGridTextColumn Header="左 ハッシュ値" Binding="{Binding LeftHash}" />
+                <DataGridTextColumn Header="左 ファイル拡張子" Binding="{Binding LeftExtention}" />
+                <DataGridTextColumn Header="左 最終更新日時" Binding="{Binding LeftUpdateDatetime}" />
+                <DataGridTextColumn Header="右 ファイルサイズ" Binding="{Binding RightSize}" />
+                <DataGridTextColumn Header="右 ファイルフル名" Binding="{Binding RightFullName}" />
+                <DataGridTextColumn Header="右 フォルダパス" Binding="{Binding RightFullPath}" />
+                <DataGridTextColumn Header="右 ファイル名" Binding="{Binding RightName}" />
+                <DataGridTextColumn Header="右 ハッシュ値" Binding="{Binding RightHash}" />
+                <DataGridTextColumn Header="右 ファイル拡張子" Binding="{Binding RightExtention}" />
+                <DataGridTextColumn Header="右 最終更新日時" Binding="{Binding RightUpdateDatetime}" />
+                <DataGridTextColumn Header="右 ファイルサイズ" Binding="{Binding RightSize}" />
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </localControls:BasePanel>

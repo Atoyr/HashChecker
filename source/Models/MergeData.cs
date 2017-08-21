@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HashChecker.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,10 @@ namespace HashChecker.Models
 {
     public class MergeData
     {
-        // 左側
         public string Path { set; get; } = string.Empty;
+        public MergeResult MergeResult { set; get; } = MergeResult.None;
+
+        // 左側
         public string LeftFullName { set; get; } = string.Empty;
         public string LeftFullPath { set; get; } = string.Empty;
         public string LeftName { set; get; } = string.Empty;
