@@ -80,12 +80,13 @@
             </StackPanel>
             <ProgressBar 
                     x:Name="PART_StatusBarProgressBar"
-                Grid.Column="1" Width="150" Height="10" 
+                Grid.Column="1" Width="150" Height="23" Margin="3,2,3,2"
                 VerticalAlignment="Center"
-                Minimum="{Binding StatusBar.ProgressBarMinimum}"
-                Maximum="{Binding StatusBar.ProgressBarMaximum}"
-                Value="{Binding StatusBar.ProgressBarValue}"
-                IsIndeterminate="{Binding StatusBar.ProgressBarIsIndeterminate}"/>
+                Visibility="{Binding StatusBar.ProgressBarVisibility}"
+                Minimum="{Binding StatusBar.Minimum}"
+                Maximum="{Binding StatusBar.Maximum}"
+                Value="{Binding StatusBar.Value}"
+                IsIndeterminate="{Binding StatusBar.IsIndeterminate}"/>
             <!--<controls:ResizeGrip Grid.Column="1" />-->
         </Grid>
     </Grid>

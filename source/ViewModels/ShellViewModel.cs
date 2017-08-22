@@ -21,6 +21,11 @@ namespace HashChecker.ViewModels
         private StatusBar statusBar;
         public StatusBar StatusBar { private set => SetProperty(ref statusBar, value); get => statusBar; }
 
+        ~ShellViewModel()
+        {
+            UnregistEventSubscribe();
+        }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -31,20 +36,44 @@ namespace HashChecker.ViewModels
         private void RegistEventSubscribe()
         {
             var eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
-            eventAggregator .GetEvent<StatusBarMessageChangeEvent>().Subscribe(StatusBarMessageChange);
+            eventAggregator.GetEvent<StatusBarMessageChangeEvent>().Subscribe(StatusBarMessageChange);
+            eventAggregator.GetEvent<ProgressBarChangeEvent>().Subscribe(ProgressBarValueChange);
         }
 
         private void UnregistEventSubscribe()
         {
             var eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             eventAggregator.GetEvent<StatusBarMessageChangeEvent>().Unsubscribe(StatusBarMessageChange);
+            eventAggregator.GetEvent<ProgressBarChangeEvent>().Unsubscribe(ProgressBarValueChange);
         }
 
+        /// <summary>
+        /// ステータスバー メッセージ変更処理
+        /// EventAggregator経由で変更する
+        /// </summary>
+        /// <param name="value"></param>
         private void StatusBarMessageChange(IMessageValue value)
         {
             if (StatusBar != null)
             {
                 StatusBar.Message = value.Message;
+            }
+        }
+
+        /// <summary>
+        /// プログレスバー 変更処理
+        /// EventAggregator経由で変更する
+        /// </summary>
+        /// <param name="value"></param>
+        private void ProgressBarValueChange(IProgressBarValue value)
+        {
+            if (StatusBar != null)
+            {
+                StatusBar.IsIndeterminate = value.IsIndeterminate;
+                StatusBar.Maximum = value.Maximum;
+                StatusBar.Minimum = value.Minimum;
+                StatusBar.Value = value.Value;
+                StatusBar.ProgressBarVisibility = value.ProgressBarVisibility;
             }
         }
     }

@@ -8,9 +8,9 @@ namespace HashChecker.Util
 {
     public class FileUtil
     {
-        void hoge()
-        {
-            StorageFolder hogehoge = ApplicationData.Current.LocalFolder;
-        }
+        //void hoge()
+        //{
+        //    StorageFolder hogehoge = ApplicationData.Current.LocalFolder;
+        //}
     }
 }

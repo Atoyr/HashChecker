@@ -124,6 +124,8 @@
     <Compile Include="Enums\Regions.cs" />
     <Compile Include="Events\FolderOpenEvent.cs" />
     <Compile Include="Events\FolderOpenValue.cs" />
+    <Compile Include="Events\ProgressBarChangeEvent.cs" />
+    <Compile Include="Events\ProgressBarChangeValue.cs" />
     <Compile Include="Events\StatusBarMessageChangeEvent.cs" />
     <Compile Include="Events\StatusBarMessageChangeValue.cs" />
     <Compile Include="HashCheckerModule.cs" />
@@ -132,6 +134,8 @@
     <Compile Include="Interfaces\IFolderOpenValue.cs" />
     <Compile Include="Interfaces\IMessageProvider.cs" />
     <Compile Include="Interfaces\IMessagePublisher.cs" />
+    <Compile Include="Interfaces\IProgressBarProvider.cs" />
+    <Compile Include="Interfaces\IProgressBarPublisher.cs" />
     <Compile Include="Interfaces\IProgressBarValue.cs" />
     <Compile Include="Interfaces\IMessageValue.cs" />
     <Compile Include="Models\FileData.cs" />
@@ -225,6 +229,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Converters\" />
     <Folder Include="Resouces\" />
     <Folder Include="Style\" />
   </ItemGroup>

@@ -45,7 +45,9 @@
             IsReadOnly="True"
             CanUserAddRows="False"
             CanUserDeleteRows="False"
-            CanUserResizeColumns="False"
+            CanUserResizeColumns="True"
+            CanUserResizeRows="False"
+            HeadersVisibility="Column"
             ItemsSource="{Binding GridData}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ファイルパス" Binding="{Binding Path}" />
