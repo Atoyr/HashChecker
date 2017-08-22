@@ -80,7 +80,7 @@
             </StackPanel>
             <ProgressBar 
                     x:Name="PART_StatusBarProgressBar"
-                Grid.Column="1" Width="150" Height="23" Margin="3,2,3,2"
+                Grid.Column="1" Width="150" Height="15" Margin="3,4,3,4"
                 VerticalAlignment="Center"
                 Visibility="{Binding StatusBar.ProgressBarVisibility}"
                 Minimum="{Binding StatusBar.Minimum}"
