@@ -79,8 +79,8 @@
             </DockPanel>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black" Command="{Binding WindowCloseCommand}">OK</Button>
-            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">キャンセル</Button>
+            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black" Command="{Binding OkCommand}">OK</Button>
+            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black" Command="{Binding CancelCommand}">キャンセル</Button>
         </StackPanel>
     </DockPanel>
 </UserControl>

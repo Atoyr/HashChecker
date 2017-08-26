@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HashChecker.ViewModels
 {
@@ -16,7 +17,8 @@ namespace HashChecker.ViewModels
     {
         public InteractionRequest<INotification> WindowCloseRequest { get; } = new InteractionRequest<INotification>();
 
-        public DelegateCommand WindowCloseCommand { get; private set; }
+        public ICommand OkCommand { get; private set; }
+        public ICommand CancelCommand { get; private set; }
         public DelegateCommand<string> FolderOpenDialogCommand { get; private set; }
 
         enum FolderNo
@@ -45,9 +47,13 @@ namespace HashChecker.ViewModels
 
         public void CommandInitialize()
         {
-            this.WindowCloseCommand = new DelegateCommand(() =>
+            this.OkCommand = new DelegateCommand(() =>
             {
-                EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = this.FirstFolderPath ,SecondFolderPath = this.SecondFolderPath ,SearchPattern = this.Filter });
+                EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = this.FirstFolderPath, SecondFolderPath = this.SecondFolderPath, SearchPattern = this.Filter });
+                this.WindowCloseRequest.Raise(new Notification());
+            });
+            this.CancelCommand = new DelegateCommand(() =>
+            {
                 this.WindowCloseRequest.Raise(new Notification());
             });
             this.FolderOpenDialogCommand = new DelegateCommand<string>((param) =>
