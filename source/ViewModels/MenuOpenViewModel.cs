@@ -1,5 +1,7 @@
 ﻿using HashChecker.Abstract;
 using HashChecker.Events;
+using HashChecker.Views;
+using Microsoft.Practices.ServiceLocation;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using Prism.Commands;
 using Prism.Interactivity.InteractionRequest;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace HashChecker.ViewModels
 {
@@ -32,7 +35,14 @@ namespace HashChecker.ViewModels
         private string secondFolderPath = string.Empty;
         private string filter = "*.*";
 
-        public string FirstFolderPath { set => SetProperty(ref firstFolderPath,value); get => firstFolderPath; }
+        public string FirstFolderPath {
+            set
+            {
+                SetProperty(ref firstFolderPath, value);
+                if (OkCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
+            }
+            get => firstFolderPath;
+        }
         public string SecondFolderPath { set => SetProperty(ref secondFolderPath,value); get => secondFolderPath; }
         public string Filter { set => SetProperty(ref filter, value); get => filter; }
         public ObservableCollection<string> FirstFolderPathHistory { set; private get; }
@@ -51,7 +61,7 @@ namespace HashChecker.ViewModels
             {
                 EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = this.FirstFolderPath, SecondFolderPath = this.SecondFolderPath, SearchPattern = this.Filter });
                 this.WindowCloseRequest.Raise(new Notification());
-            });
+            }, CanOkCommandExecute);
             this.CancelCommand = new DelegateCommand(() =>
             {
                 this.WindowCloseRequest.Raise(new Notification());
@@ -81,7 +91,7 @@ namespace HashChecker.ViewModels
             dialog.IsFolderPicker = true;
 
             // ダイアログを表示
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (dialog.ShowDialog(ServiceLocator.Current.GetInstance<SubWindow>()) == CommonFileDialogResult.Ok)
             {
                 switch (folderNo)
                 {
