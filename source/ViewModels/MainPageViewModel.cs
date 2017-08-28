@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace HashChecker.ViewModels
 {
@@ -21,7 +22,10 @@ namespace HashChecker.ViewModels
     {
         public InteractionRequest<INotification> OpenForderNotificationRequest { get; } = new InteractionRequest<INotification>();
 
-        public DelegateCommand ShowWindowCommand { get; private set; }
+        public ICommand ShowWindowCommand { get; private set; }
+
+        private ICommand executeMergeHashCommand;
+        public ICommand ExecuteMergeHashCommand { get => executeMergeHashCommand; private set => SetProperty(ref executeMergeHashCommand,value); }
 
         private ObservableCollection<MergeData> gridData;
         public ObservableCollection<MergeData> GridData { set => SetProperty(ref gridData, value); get => gridData; }
@@ -42,6 +46,11 @@ namespace HashChecker.ViewModels
                     Title = "ファイルを開く",
                 });
             });
+
+            this.ExecuteMergeHashCommand = new DelegateCommand(() =>
+            {
+                BindingGridData.ExecuteHashMergeAsync(GridData);
+            }, () => GridData != null && GridData.Any());
         }
         
         private void FolderOpen(IFolderOpenValue value)
@@ -53,6 +62,7 @@ namespace HashChecker.ViewModels
                 EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = true, ProgressBarVisibility = Visibility.Visible });
             }
             GridData = new ObservableCollection<MergeData>(BindingGridData.GetMergeList(value.FirstFolderPath, value.SecondFolderPath, value.SearchPattern));
+            if (ExecuteMergeHashCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
             if (EventAggregator != null)
             {
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "準備完了" });

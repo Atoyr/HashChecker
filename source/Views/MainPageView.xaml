@@ -34,9 +34,15 @@
             VerticalContentAlignment="Center"
             Background="#AA888888" >
             <MenuItem Header="ファイル(_F)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
-                <MenuItem Header="開く(_O)" Name="PART_MenuOpen" Command="{Binding ShowWindowCommand}"/>
-                <MenuItem Header="比較(_M)" />
+                <MenuItem Header="開く(_O)" Name="PART_MenuOpen" Command="{Binding ShowWindowCommand,UpdateSourceTrigger=PropertyChanged}"/>
+                <MenuItem Header="ハッシュ値 比較(_M)" Command="{Binding ExecuteMergeHashCommand,UpdateSourceTrigger=PropertyChanged}"/>
                 <MenuItem Header="閉じる(_C)" Command="Close"/>
+            </MenuItem>
+            <MenuItem Header="編集(_E)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
+                <MenuItem Header="設定(_C)" Command="Close"/>
+            </MenuItem>
+            <MenuItem Header="ヘルプ(_F)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
+                <MenuItem Header="バージョン情報(_A)" Command="Close"/>
             </MenuItem>
         </Menu>
         <DataGrid 
@@ -49,9 +55,14 @@
             CanUserResizeRows="False"
             HeadersVisibility="Column"
             ItemsSource="{Binding GridData}">
+            <DataGrid.Resources>
+                <Style TargetType="DataGrid">
+                    
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ファイルパス" Binding="{Binding Path}" />
-                <DataGridTextColumn Header="比較結果" Binding="{Binding MergeResult}" />
+                <DataGridTextColumn Header="相対ファイルパス" Binding="{Binding Path}" />
+                <DataGridTextColumn Header="比較結果" Binding="{Binding MergeResultMessage}" />
                 <DataGridTextColumn Header="左 ファイルフル名" Binding="{Binding LeftFullName}" />
                 <DataGridTextColumn Header="左 フォルダパス" Binding="{Binding LeftFullPath}" />
                 <DataGridTextColumn Header="左 ファイル名" Binding="{Binding LeftName}" />

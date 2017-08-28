@@ -31,7 +31,9 @@ namespace HashChecker.Enums
                 case MergeResult.RightFileNotFound:
                     return "右ファイルなし";
                 case MergeResult.None:
+                    return "ファイルなし";
                 case MergeResult.NotAction:
+                    return "未比較";
                 default:
                     return string.Empty;
             }

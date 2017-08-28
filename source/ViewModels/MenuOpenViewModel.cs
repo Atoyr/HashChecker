@@ -87,6 +87,10 @@ namespace HashChecker.ViewModels
                 {
                     case FolderNo.First:
                         FirstFolderPath = dialog.FileName;
+                        Task.Run(() =>
+                        {
+                            System.IO.File.Exists(FirstFolderPath);
+                        });
                         break;
                     case FolderNo.Second:
                         SecondFolderPath = dialog.FileName;
@@ -95,6 +99,15 @@ namespace HashChecker.ViewModels
                         break;
                 }
             }
+        }
+
+        private bool CanOkCommandExecute()
+        {
+            if(FirstFolderPath == SecondFolderPath)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

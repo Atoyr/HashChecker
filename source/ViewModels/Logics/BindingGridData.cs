@@ -1,10 +1,12 @@
 ﻿using HashChecker.Models;
+using HashChecker.Util;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace HashChecker.Logics
 {
@@ -139,7 +141,25 @@ namespace HashChecker.Logics
         private static void AddHashValue<T>(FileData fileData, T algorithm)
             where T : HashAlgorithm, new()
         {
-            //fileData.Hash = Hash.ConvertHashString(Hash.GetHashFromFile(fileData.FullName, algorithm));
+            fileData.Hash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(fileData.FullName, algorithm));
+        }
+        private static void AddHashValue<T>(MergeData mergeData, T algorithm)
+            where T : HashAlgorithm, new()
+        {
+            if (File.Exists(mergeData.LeftFullName)) mergeData.LeftHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(mergeData.LeftFullName, algorithm));
+            if (File.Exists(mergeData.RightFullName)) mergeData.RightHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(mergeData.RightFullName, algorithm));
+        }
+        public static Task ExecuteHashMergeAsync(IEnumerable<MergeData> mergeDatas)
+        {
+            return Task.Run(() =>
+            {
+                foreach (MergeData md in mergeDatas)
+                {
+                    var algo = HashAlgorithm.Create("MD5") as MD5CryptoServiceProvider;
+                    AddHashValue(md, algo);
+                    md.UpdateMergeResult();
+                }
+            });
         }
     }
 }
