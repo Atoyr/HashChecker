@@ -99,7 +99,8 @@ namespace HashChecker.Logics
                     RightHash = r == null ? string.Empty : r.Hash,
                     RightExtension = r == null ? string.Empty : r.Extension,
                     RightUpdateDatetime = r == null ? DateTime.MinValue : r.UpdateDatetime,
-                    RightSize = r == null ? 0L : r.Size
+                    RightSize = r == null ? 0L : r.Size,
+                    MergeResult = r == null ? Enums.MergeResult.RightFileNotFound : Enums.MergeResult.NotAction
                 };
         }
 
@@ -134,7 +135,8 @@ namespace HashChecker.Logics
                     RightHash = r.Hash,
                     RightExtension = r.Extension,
                     RightUpdateDatetime = r.UpdateDatetime,
-                    RightSize = r.Size
+                    RightSize = r.Size,
+                    MergeResult = l == null ? Enums.MergeResult.LeftFileNotFound : Enums.MergeResult.NotAction
                 };
         }
 

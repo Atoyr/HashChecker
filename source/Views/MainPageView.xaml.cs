@@ -1,6 +1,7 @@
 ﻿using HashChecker.Controls;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace HashChecker.Views
     /// </summary>
     public partial class MainPageView : BasePanel
     {
+        public static string RowIndexName => "RowIndex";
+
         public MainPageView()
         {
             InitializeComponent();

@@ -145,3 +145,5 @@ C:\private\source\HashChecker\source\obj\Debug\HashChecker.Properties.Resources.
 C:\private\source\HashChecker\source\obj\Debug\HashChecker.csproj.GenerateResource.Cache
 C:\private\source\HashChecker\source\obj\Debug\HashChecker.exe
 C:\private\source\HashChecker\source\obj\Debug\HashChecker.pdb
+C:\private\source\HashChecker\source\obj\Debug\Styles\Style.baml
+C:\private\source\HashChecker\source\obj\Debug\Styles\Style.DataGrid.baml

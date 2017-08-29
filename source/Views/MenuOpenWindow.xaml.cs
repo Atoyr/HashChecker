@@ -1,4 +1,6 @@
 ﻿using MetroRadiance.UI.Controls;
+using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +26,12 @@ namespace HashChecker.Views
         {
             InitializeComponent();
         }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            ServiceLocator.Current.GetInstance<IUnityContainer>().RegisterInstance(this);
+        }
+
     }
 }

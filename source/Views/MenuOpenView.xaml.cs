@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,15 @@ namespace HashChecker.Views
         public MenuOpenView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new CommonOpenFileDialog("フォルダーの選択");
+
+            // 選択形式をフォルダースタイルにする IsFolderPicker プロパティを設定
+            dialog.IsFolderPicker = true;
+            dialog.ShowDialog((Window)ServiceLocator.Current.GetInstance(typeof(SubWindow)));
         }
     }
 }

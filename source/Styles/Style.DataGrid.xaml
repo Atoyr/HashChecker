@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SI.OBPM.PMBase.UIX.Controls">
+  <Style TargetType="DataGrid">
+    <Setter Property="EnableColumnVirtualization"
+            Value="False" />
+    <Setter Property="AutoGenerateColumns"
+            Value="False" />
+    <Setter Property="SelectionMode"
+            Value="Extended" />
+    <Setter Property="GridLinesVisibility"
+            Value="All" />
+    <Setter Property="HorizontalGridLinesBrush"
+            Value="{DynamicResource BorderColor}" />
+    <Setter Property="VerticalGridLinesBrush"
+            Value="{DynamicResource BorderColor}" />
+    <Setter Property="SelectionUnit"
+            Value="CellOrRowHeader" />
+    <Setter Property="IsReadOnly"
+            Value="True" />
+    <Setter Property="HeadersVisibility"
+            Value="Column" />
+    <Setter Property="CanUserAddRows"
+            Value="False" />
+    <Setter Property="CanUserDeleteRows"
+            Value="False" />
+    <Setter Property="CanUserReorderColumns"
+            Value="False" />
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+            Value="Visible" />
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+            Value="Visible" />
+    <!-- 列ヘッダスタイル設定 -->
+    <Setter Property="ColumnHeaderStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+          <Setter Property="Height"
+                      Value="23" />
+          <Setter Property="Padding"
+                      Value="3,2,3,2" />
+          <Setter Property="Background"
+                      Value="{DynamicResource BackColorCaption}" />
+          <Setter Property="BorderBrush"
+                      Value="{DynamicResource BorderColor}" />
+          <Setter Property="BorderThickness"
+                      Value="0,0,1,1" />
+          <Setter Property="HorizontalAlignment"
+                      Value="Stretch" />
+          <Setter Property="HorizontalContentAlignment"
+                      Value="Stretch" />
+        </Style>
+      </Setter.Value>
+    </Setter>
+    <!-- データ行スタイル設定 -->
+    <Setter Property="RowStyle">
+      <Setter.Value>
+        <Style TargetType="{x:Type DataGridRow}">
+          <Style.Triggers>
+            <!--偶数行の色-->
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+              <Setter Property="Background" Value="{DynamicResource AlternateColor}" />
+            </Trigger>
+          </Style.Triggers>
+          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+          <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -29,7 +29,7 @@
     <DockPanel LastChildFill="False">
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DockPanel.Dock="Top">
             <StackPanel>
-                <Label Content="比較するファイルまたはフォルダ" Foreground="WhiteSmoke"/>
+                <Label Content="比較するフォルダ" Foreground="WhiteSmoke"/>
             </StackPanel>
             <DockPanel LastChildFill="True" Margin="3">
                 <Label 

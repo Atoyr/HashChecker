@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +26,9 @@ namespace HashChecker.Views
             InitializeComponent();
         }
 
-        private void PART_MenuOpen_Click(object sender, RoutedEventArgs e)
+        ~Shell()
         {
-            new MenuOpenWindow().ShowDialog();
+            ServiceLocator.Current.GetInstance<IUnityContainer>().Dispose();
         }
     }
 }

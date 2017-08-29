@@ -10,6 +10,7 @@
     xmlns:chrome="http://schemes.grabacr.net/winfx/2014/chrome"
     xmlns:controls="http://schemes.grabacr.net/winfx/2014/controls"
     xmlns:localControls="clr-namespace:HashChecker.Controls"
+    xmlns:enums="clr-namespace:HashChecker.Enums"
     xmlns:common="clr-namespace:HashChecker.Common"
     xmlns:prism="http://prismlibrary.com/"
     prism:ViewModelLocator.AutoWireViewModel="True"
@@ -46,20 +47,53 @@
             </MenuItem>
         </Menu>
         <DataGrid 
+            x:Name="PART_DataGrid"
             Grid.Row="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
             AutoGenerateColumns="False"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Auto"
+            SelectionMode="Single"
             IsReadOnly="True"
             CanUserAddRows="False"
             CanUserDeleteRows="False"
             CanUserResizeColumns="True"
             CanUserResizeRows="False"
-            HeadersVisibility="Column"
+            HeadersVisibility="All"
             ItemsSource="{Binding GridData}">
             <DataGrid.Resources>
-                <Style TargetType="DataGrid">
-                    
-                </Style>
             </DataGrid.Resources>
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <!--<Setter Property="Content" Value="{Binding RowIndex}"/>-->
+                    <Setter Property="Width" Value="25" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding MergeResult}" Value="91">
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding MergeResult}" Value="92">
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding MergeResult}" Value="93">
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding MergeResult}" Value="91">
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding MergeResult}" Value="92">
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding MergeResult}" Value="93">
+                            <Setter Property="Background" Value="LightPink" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="相対ファイルパス" Binding="{Binding Path}" />
                 <DataGridTextColumn Header="比較結果" Binding="{Binding MergeResultMessage}" />

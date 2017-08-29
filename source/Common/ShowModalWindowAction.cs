@@ -1,4 +1,6 @@
-﻿using Prism.Regions;
+﻿using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
+using Prism.Regions;
 using System;
 using System.Windows;
 using System.Windows.Interactivity;

@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -19,6 +20,9 @@ namespace HashChecker.ViewModels
     class MenuOpenViewModel : AbstractViewModel
     {
         public InteractionRequest<INotification> WindowCloseRequest { get; } = new InteractionRequest<INotification>();
+
+        private Window window;
+        public Window Window { get => window; set => SetProperty(ref window, value); }
 
         public ICommand OkCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
@@ -91,7 +95,7 @@ namespace HashChecker.ViewModels
             dialog.IsFolderPicker = true;
 
             // ダイアログを表示
-            if (dialog.ShowDialog(ServiceLocator.Current.GetInstance<SubWindow>()) == CommonFileDialogResult.Ok)
+            if (dialog.ShowDialog(ServiceLocator.Current.GetInstance<MenuOpenWindow>()) == CommonFileDialogResult.Ok)
             {
                 switch (folderNo)
                 {
