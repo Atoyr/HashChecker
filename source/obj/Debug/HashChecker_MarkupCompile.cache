@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\dev\source\HashChecker\source\obj\Debug\
+C:\private\source\HashChecker\source\obj\Debug\
 HashChecker
 none
 false
-CODE_ANALYSIS;DEBUG;TRACE
-C:\dev\source\HashChecker\source\App.xaml
-3-1346302792
+DEBUG;TRACE
+C:\private\source\HashChecker\source\App.xaml
+92005781254
 
-10486913137
-862142930545
-Command\Command.xaml;View\MainWindow.xaml;Style\Styles.xaml;
+502042993801
+86-1936174753
+Styles\Style.xaml;Themes\Generic.BasePanel.xaml;Themes\Generic.xaml;Views\MainPageView.xaml;Views\MenuOpenWindow.xaml;Views\MenuOpenView.xaml;Views\Shell.xaml;Views\SubWindow.xaml;Styles\Style.DataGrid.xaml;
 
 False
 
