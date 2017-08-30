@@ -30,7 +30,10 @@ namespace HashChecker.ViewModels
         {
             base.Initialize();
             RegistEventSubscribe();
-            StatusBar = new StatusBar { Message = "準備完了" };
+            StatusBar = new StatusBar
+            {
+                Message = "準備完了"
+            };
         }
 
         private void RegistEventSubscribe()
@@ -70,9 +73,9 @@ namespace HashChecker.ViewModels
             if (StatusBar != null)
             {
                 StatusBar.IsIndeterminate = value.IsIndeterminate;
-                StatusBar.Maximum = value.Maximum;
-                StatusBar.Minimum = value.Minimum;
-                StatusBar.Value = value.Value;
+                if (value.Maximum >= 0) StatusBar.Maximum = value.Maximum;
+                if (value.Minimum >= 0) StatusBar.Minimum = value.Minimum;
+                if (value.Value >= 0) StatusBar.Value = value.Value;
                 StatusBar.ProgressBarVisibility = value.ProgressBarVisibility;
             }
         }

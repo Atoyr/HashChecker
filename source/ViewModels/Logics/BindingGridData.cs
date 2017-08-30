@@ -151,16 +151,28 @@ namespace HashChecker.Logics
             if (File.Exists(mergeData.LeftFullName)) mergeData.LeftHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(mergeData.LeftFullName, algorithm));
             if (File.Exists(mergeData.RightFullName)) mergeData.RightHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(mergeData.RightFullName, algorithm));
         }
-        public static Task ExecuteHashMergeAsync(IEnumerable<MergeData> mergeDatas)
+        public async static Task ExecuteHashMergeAsync(IEnumerable<MergeData> mergeDatas)
+        {
+            await ExecuteHashMergeAsync(mergeDatas,new Action<int>((i) => { }), new Action<int>((i) => { }), new Action<int>((i) => { }), new Action(() => { }));
+        }
+
+        public static Task ExecuteHashMergeAsync(IEnumerable<MergeData> mergeDatas,Action<int> initialAction,Action<int> beginAction,Action<int> endAction ,Action finalyAction)
         {
             return Task.Run(() =>
             {
+                int maxValue = mergeDatas.Count();
+                initialAction(maxValue);
+                int index = 0;
                 foreach (MergeData md in mergeDatas)
                 {
-                    var algo = HashAlgorithm.Create("MD5") as MD5CryptoServiceProvider;
+                    beginAction(index);
+                    var algo = HashAlgorithm.Create("SHA-1") as SHA1CryptoServiceProvider;
                     AddHashValue(md, algo);
                     md.UpdateMergeResult();
+                    ++index;
+                    endAction(index);
                 }
+                finalyAction();
             });
         }
     }
