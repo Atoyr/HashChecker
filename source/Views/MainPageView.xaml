@@ -31,7 +31,7 @@
         </Grid.RowDefinitions>
         <Menu 
             x:Name="PART_MenuBar" 
-            Grid.Row="0" 
+            Grid.Row="0"
             Height="{x:Static SystemParameters.MenuBarHeight}" 
             VerticalAlignment="Stretch" 
             HorizontalAlignment="Stretch" 
