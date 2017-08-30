@@ -22,11 +22,15 @@ namespace HashChecker.Views
     /// </summary>
     public partial class MainPageView : BasePanel
     {
-        public static string RowIndexName => "RowIndex";
-
         public MainPageView()
         {
             InitializeComponent();
+        }
+
+        private void Close_Executed(object sender, RoutedEventArgs e)
+        {
+            // 自分自身を閉じます  
+            Window.GetWindow(this)?.Close();
         }
     }
 }
