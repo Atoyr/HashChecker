@@ -1,5 +1,6 @@
 ﻿using HashChecker.Abstract;
 using HashChecker.Events;
+using HashChecker.Models;
 using HashChecker.Views;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -57,12 +58,27 @@ namespace HashChecker.ViewModels
         {
             base.Initialize();
             this.CommandInitialize();
+            FirstFolderPathHistory = UserSetting.Current.FirstFolderPathList ?? new ObservableCollection<string>();
+            SecondFolderPathHistory = UserSetting.Current.SecondFolderPathList ?? new ObservableCollection<string>();
+            FilterHistory = UserSetting.Current.FilterList ?? new ObservableCollection<string>();
         }
 
         public void CommandInitialize()
         {
             this.OkCommand = new DelegateCommand(() =>
             {
+                FirstFolderPathHistory.Remove(FirstFolderPath);
+                FirstFolderPathHistory.Add(FirstFolderPath);
+                SecondFolderPathHistory.Remove(SecondFolderPath);
+                SecondFolderPathHistory.Add(SecondFolderPath);
+                FilterHistory.Remove(Filter);
+                FilterHistory.Add(Filter);
+
+                UserSetting.Current.FirstFolderPathList = FirstFolderPathHistory;
+                UserSetting.Current.SecondFolderPathList = SecondFolderPathHistory;
+                UserSetting.Current.FilterList = FilterHistory;
+                UserSetting.Current.Save();
+
                 EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = this.FirstFolderPath, SecondFolderPath = this.SecondFolderPath, SearchPattern = this.Filter });
                 this.WindowCloseRequest.Raise(new Notification());
             }, CanOkCommandExecute);
