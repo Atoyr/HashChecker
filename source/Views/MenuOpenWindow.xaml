@@ -10,6 +10,7 @@
                       prism:ViewModelLocator.AutoWireViewModel="True"
                       mc:Ignorable="d"
                       Title="ファイルを開く"
+                      Icon="pack://application:,,,/HashChecker;component/Resouces/Icon.ico"
                       ResizeMode="NoResize"
 					  Background="{DynamicResource ThemeBrushKey}"
                       Width="520"
@@ -33,9 +34,7 @@
                     <RowDefinition Height="2" />
                 </Grid.RowDefinitions>
                 <controls:CaptionIcon Grid.Column="0">
-                    <Ellipse Width="18"
-							 Height="18"
-							 Fill="{DynamicResource ActiveForegroundBrushKey}" />
+                    <Image Width="18" Height="18" Source="{Binding Path=Icon,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
                 </controls:CaptionIcon>
                 <TextBlock Grid.Column="1"
 						   Grid.Row="0"
