@@ -98,7 +98,7 @@ namespace HashChecker.Logics
                     RightHash = r == null ? string.Empty : r.Hash,
                     RightExtension = r == null ? string.Empty : r.Extension,
                     RightUpdateDatetime = r.UpdateDatetime,
-                    RightSize = r == null ? 0L : r.Size,
+                    RightSize = r.Size,
                     MergeResult = r == null ? Enums.MergeResult.RightFileNotFound : Enums.MergeResult.NotAction
                 };
         }
@@ -126,7 +126,7 @@ namespace HashChecker.Logics
                     LeftHash = l == null ? string.Empty : l.Hash,
                     LeftExtension = l == null ? string.Empty : l.Extension,
                     LeftUpdateDatetime = l.UpdateDatetime,
-                    LeftSize = l == null ? 0L : l.Size,
+                    LeftSize = l.Size,
 
                     RightFullName = r.FullName,
                     RightFullPath = r.FullPath,
@@ -165,6 +165,8 @@ namespace HashChecker.Logics
                 foreach (MergeData md in mergeDatas)
                 {
                     beginAction(index);
+                    // アルゴリズム変えるときはここを変える
+                    // Configファイルにもちたかったけど・・・
                     var algo = HashAlgorithm.Create("SHA-1") as SHA1CryptoServiceProvider;
                     AddHashValue(md, algo);
                     md.UpdateMergeResult();
