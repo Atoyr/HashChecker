@@ -1,5 +1,6 @@
 ﻿using HashChecker.Abstract;
 using HashChecker.Events;
+using HashChecker.Models;
 using HashChecker.Views;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -8,6 +9,7 @@ using Prism.Interactivity.InteractionRequest;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +41,8 @@ namespace HashChecker.ViewModels
         private string secondFolderPath = string.Empty;
         private string filter = "*.*";
 
-        public string FirstFolderPath {
+        public string FirstFolderPath
+        {
             set
             {
                 SetProperty(ref firstFolderPath, value);
@@ -47,7 +50,15 @@ namespace HashChecker.ViewModels
             }
             get => firstFolderPath;
         }
-        public string SecondFolderPath { set => SetProperty(ref secondFolderPath,value); get => secondFolderPath; }
+        public string SecondFolderPath
+        {
+            set
+            {
+                SetProperty(ref secondFolderPath, value);
+                if (OkCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
+            }
+            get => secondFolderPath;
+        }
         public string Filter { set => SetProperty(ref filter, value); get => filter; }
         public ObservableCollection<string> FirstFolderPathHistory { set; private get; }
         public ObservableCollection<string> SecondFolderPathHistory { set; private get; }
@@ -57,13 +68,31 @@ namespace HashChecker.ViewModels
         {
             base.Initialize();
             this.CommandInitialize();
+            FirstFolderPathHistory = UserSetting.Current.FirstFolderPathList ?? new ObservableCollection<string>();
+            SecondFolderPathHistory = UserSetting.Current.SecondFolderPathList ?? new ObservableCollection<string>();
+            FilterHistory = UserSetting.Current.FilterList ?? new ObservableCollection<string>();
         }
 
         public void CommandInitialize()
         {
             this.OkCommand = new DelegateCommand(() =>
             {
-                EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = this.FirstFolderPath, SecondFolderPath = this.SecondFolderPath, SearchPattern = this.Filter });
+                // 一度変数として受け取る
+                // ItemsSourceからRemoveで消すと値が消えるため
+                var firstFolderPath = FirstFolderPath;
+                var secondFolderPath = SecondFolderPath;
+                FirstFolderPathHistory.Remove(firstFolderPath);
+                FirstFolderPathHistory.Insert(0, firstFolderPath);
+                if (FirstFolderPathHistory.Count() > 10) FirstFolderPathHistory.RemoveAt(10);
+                SecondFolderPathHistory.Remove(secondFolderPath);
+                SecondFolderPathHistory.Insert(0, secondFolderPath);
+                if (SecondFolderPathHistory.Count() > 10) SecondFolderPathHistory.RemoveAt(10);
+
+                UserSetting.Current.FirstFolderPathList = FirstFolderPathHistory;
+                UserSetting.Current.SecondFolderPathList = SecondFolderPathHistory;
+                UserSetting.Current.Save();
+
+                EventAggregator.GetEvent<FolderOpenEvent>().Publish(new FolderOpenValue { FirstFolderPath = firstFolderPath, SecondFolderPath = secondFolderPath, SearchPattern = this.Filter });
                 this.WindowCloseRequest.Raise(new Notification());
             }, CanOkCommandExecute);
             this.CancelCommand = new DelegateCommand(() =>
@@ -118,6 +147,10 @@ namespace HashChecker.ViewModels
         private bool CanOkCommandExecute()
         {
             if(FirstFolderPath == SecondFolderPath)
+            {
+                return false;
+            }
+            if(!Directory.Exists(FirstFolderPath) || !Directory.Exists(SecondFolderPath))
             {
                 return false;
             }

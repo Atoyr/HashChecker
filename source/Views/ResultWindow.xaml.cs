@@ -1,5 +1,4 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using Microsoft.WindowsAPICodePack.Dialogs;
+﻿using MetroRadiance.UI.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +11,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HashChecker.Views
 {
     /// <summary>
-    /// OpenView.xaml の相互作用ロジック
+    /// ResultWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MenuOpenView : UserControl
+    public partial class ResultWindow : MetroWindow
     {
-        public MenuOpenView()
+        public ResultWindow()
         {
             InitializeComponent();
         }

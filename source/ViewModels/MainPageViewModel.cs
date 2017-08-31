@@ -21,14 +21,27 @@ namespace HashChecker.ViewModels
     public class MainPageViewModel : AbstractViewModel
     {
         public InteractionRequest<INotification> OpenForderNotificationRequest { get; } = new InteractionRequest<INotification>();
+        public InteractionRequest<INotification> OpenResultNotificationRequest { get; } = new InteractionRequest<INotification>();
 
         public ICommand ShowWindowCommand { get; private set; }
+        public ICommand ShowResultWindowCommand { get; private set; }
 
         private ICommand executeMergeHashCommand;
         public ICommand ExecuteMergeHashCommand { get => executeMergeHashCommand; private set => SetProperty(ref executeMergeHashCommand,value); }
 
         private ObservableCollection<MergeData> gridData;
         public ObservableCollection<MergeData> GridData { set => SetProperty(ref gridData, value); get => gridData; }
+
+        private bool isMerged = false;
+        private bool IsMerged
+        {
+            set
+            {
+                isMerged = value;
+                if (ShowResultWindowCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
+            }
+            get => isMerged;
+        }
 
         public override void Initialize()
         {
@@ -47,8 +60,18 @@ namespace HashChecker.ViewModels
                 });
             });
 
+            this.ShowResultWindowCommand = new DelegateCommand(() =>
+            {
+                this.OpenResultNotificationRequest.Raise(new Notification
+                {
+                    Title = "比較結果",
+                });
+            }, () => IsMerged);
+
             this.ExecuteMergeHashCommand = new DelegateCommand(async () =>
             {
+                EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
+
                 await BindingGridData.ExecuteHashMergeAsync
                     (GridData
                     ,(maxValue) => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Visible, Maximum = maxValue, Minimum = 0, Value = 0 })
@@ -56,6 +79,8 @@ namespace HashChecker.ViewModels
                     ,(index) => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Visible, Value = index })
                     ,() => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Collapsed })
                     );
+
+                IsMerged = true;
                 int NotActionCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.NotAction);
                 int ExistsCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.Exists);
                 int NotExistsCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.NotExists);
@@ -78,6 +103,7 @@ namespace HashChecker.ViewModels
                 EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = true, ProgressBarVisibility = Visibility.Visible });
             }
             GridData = new ObservableCollection<MergeData>(BindingGridData.GetMergeList(value.FirstFolderPath, value.SecondFolderPath, value.SearchPattern).OrderBy(x => x.Path));
+            IsMerged = false;
             if (ExecuteMergeHashCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
             if (EventAggregator != null)
             {

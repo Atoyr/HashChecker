@@ -2,6 +2,7 @@
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace HashChecker.Models
         public string LeftHash { set => SetProperty(ref leftHash,value); get => leftHash; }
         public string LeftExtension { set; get; } = string.Empty;
         public DateTime? LeftUpdateDatetime { set; get; }
-        public long LeftSize { set; get; } = 0L;
+        public long? LeftSize { set; get; } = 0L;
 
         // 右側
         public string RightFullName { set; get; } = string.Empty;
@@ -40,21 +41,21 @@ namespace HashChecker.Models
         public string RightHash { set => SetProperty(ref rightHash, value); get => rightHash; }
         public string RightExtension { set; get; } = string.Empty;
         public DateTime? RightUpdateDatetime { set; get; }
-        public long RightSize { set; get; } = 0L;
+        public long? RightSize { set; get; } = 0L;
 
         public void UpdateMergeResult()
         {
-            if(string.IsNullOrEmpty(LeftFullName) && string.IsNullOrEmpty(RightFullName))
+            if(!File.Exists(LeftFullName) && !File.Exists(RightFullName))
             {
                 MergeResult = MergeResult.None;
                 return;
             }
-            if (string.IsNullOrEmpty(LeftFullName))
+            if (!File.Exists(LeftFullName))
             {
                 MergeResult = MergeResult.LeftFileNotFound;
                 return;
             }
-            if (string.IsNullOrEmpty(RightFullName))
+            if (!File.Exists(RightFullName))
             {
                 MergeResult = MergeResult.RightFileNotFound;
                 return;

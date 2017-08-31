@@ -19,6 +19,7 @@
 					  Height="768"
 					  FontFamily="Segoe UI"
 					  Background="{DynamicResource ThemeBrushKey}"
+                      Icon="pack://application:,,,/HashChecker;component/Resouces/Icon.ico"
 					  IsRestoringWindowPlacement="True"
 					  UseLayoutRounding="True"
 					  TextOptions.TextFormattingMode="Display"
@@ -49,9 +50,7 @@
                     <RowDefinition Height="2" />
                 </Grid.RowDefinitions>
                 <controls:CaptionIcon Grid.Column="0">
-                    <Ellipse Width="18"
-							 Height="18"
-							 Fill="{DynamicResource ActiveForegroundBrushKey}" />
+                    <Image Width="18" Height="18" Source="{Binding Path=Icon,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
                 </controls:CaptionIcon>
                 <TextBlock Grid.Column="1"
 						   Grid.Row="0"

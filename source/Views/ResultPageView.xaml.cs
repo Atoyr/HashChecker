@@ -1,6 +1,4 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +16,11 @@ using System.Windows.Shapes;
 namespace HashChecker.Views
 {
     /// <summary>
-    /// OpenView.xaml の相互作用ロジック
+    /// ResultPageView.xaml の相互作用ロジック
     /// </summary>
-    public partial class MenuOpenView : UserControl
+    public partial class ResultPageView : UserControl
     {
-        public MenuOpenView()
+        public ResultPageView()
         {
             InitializeComponent();
         }

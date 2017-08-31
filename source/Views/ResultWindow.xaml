@@ -1,4 +1,4 @@
-﻿<controls:MetroWindow x:Class="HashChecker.Views.MenuOpenWindow"
+﻿<controls:MetroWindow x:Class="HashChecker.Views.ResultWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,8 +9,7 @@
                       xmlns:prism="http://prismlibrary.com/"
                       prism:ViewModelLocator.AutoWireViewModel="True"
                       mc:Ignorable="d"
-                      Title="ファイルを開く"
-                      Icon="pack://application:,,,/HashChecker;component/Resouces/Icon.ico"
+                      Title="比較結果"
                       ResizeMode="NoResize"
 					  Background="{DynamicResource ThemeBrushKey}"
                       Width="520"
@@ -34,7 +33,9 @@
                     <RowDefinition Height="2" />
                 </Grid.RowDefinitions>
                 <controls:CaptionIcon Grid.Column="0">
-                    <Image Width="18" Height="18" Source="{Binding Path=Icon,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
+                    <Ellipse Width="18"
+							 Height="18"
+							 Fill="{DynamicResource ActiveForegroundBrushKey}" />
                 </controls:CaptionIcon>
                 <TextBlock Grid.Column="1"
 						   Grid.Row="0"
@@ -52,6 +53,6 @@
 
             </Grid>
         </Border>
-        <local:MenuOpenView Grid.Row="1"/>
+        <local:ResultPageView Grid.Row="1"/>
     </Grid>
 </controls:MetroWindow>
