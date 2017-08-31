@@ -22,9 +22,12 @@ namespace HashChecker.ViewModels
     {
         public InteractionRequest<INotification> OpenForderNotificationRequest { get; } = new InteractionRequest<INotification>();
         public InteractionRequest<INotification> OpenResultNotificationRequest { get; } = new InteractionRequest<INotification>();
+        public InteractionRequest<INotification> OpenVersionNotificationRequest { get; } = new InteractionRequest<INotification>();
 
         public ICommand ShowWindowCommand { get; private set; }
         public ICommand ShowResultWindowCommand { get; private set; }
+
+        public ICommand ShowVersionWindowCommand { get; private set; }
 
         private ICommand executeMergeHashCommand;
         public ICommand ExecuteMergeHashCommand { get => executeMergeHashCommand; private set => SetProperty(ref executeMergeHashCommand,value); }
@@ -67,6 +70,14 @@ namespace HashChecker.ViewModels
                     Title = "比較結果",
                 });
             }, () => IsMerged);
+
+            this.ShowVersionWindowCommand = new DelegateCommand(() =>
+            {
+                this.OpenVersionNotificationRequest.Raise(new Notification
+                {
+                    Title = "バージョン情報",
+                });
+            }, () => true);
 
             this.ExecuteMergeHashCommand = new DelegateCommand(async () =>
             {
