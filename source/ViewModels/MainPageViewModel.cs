@@ -49,6 +49,8 @@ namespace HashChecker.ViewModels
 
             this.ExecuteMergeHashCommand = new DelegateCommand(async () =>
             {
+                EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
+
                 await BindingGridData.ExecuteHashMergeAsync
                     (GridData
                     ,(maxValue) => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Visible, Maximum = maxValue, Minimum = 0, Value = 0 })
@@ -56,6 +58,7 @@ namespace HashChecker.ViewModels
                     ,(index) => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Visible, Value = index })
                     ,() => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Collapsed })
                     );
+
                 int NotActionCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.NotAction);
                 int ExistsCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.Exists);
                 int NotExistsCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.NotExists);

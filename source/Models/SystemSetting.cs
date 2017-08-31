@@ -8,9 +8,13 @@ using System.Windows.Media;
 
 namespace HashChecker.Models
 {
+    /// <summary>
+    /// 未実装
+    /// </summary>
     [DataContract]
     public class SystemSetting
     {
+       
         [DataMember(Name ="FontSize")]
         public double FontSize { set; get; }
         [DataMember(Name = "FontColor")]

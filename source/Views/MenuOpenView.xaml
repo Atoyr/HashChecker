@@ -25,6 +25,37 @@
             <Setter Property="Width" Value="100" />
             <Setter Property="Foreground" Value="WhiteSmoke" />
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="WhiteSmoke" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Background" Value="#333333" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{Binding Path=Background,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" 
+                                BorderBrush="{Binding Path=BorderBrush,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" 
+                                BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#eeeeee" />
+                    <Setter Property="Background" Value="#111111" />
+                </Trigger>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="BorderBrush" Value="#eeeeee" />
+                    <Setter Property="Background" Value="#111111" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Foreground" Value="DarkGray" />
+                    <Setter Property="Background" Value="#555555" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <DockPanel LastChildFill="False">
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DockPanel.Dock="Top">
@@ -37,13 +68,14 @@
                     Content="1" />
                 <ComboBox
                     IsEditable="True" 
-                    ItemsSource="{Binding FirstFolderPathHistory}"
-                    Text="{Binding FirstFolderPath}"/>
+                    IsTextSearchEnabled="True"
+                    Text="{Binding FirstFolderPath ,UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{Binding FirstFolderPathHistory}"/>
             </DockPanel>
             <DockPanel>
                 <Button 
                     DockPanel.Dock="Right" 
-                    Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black"
+                    Margin="5" Height="23" Width="100" HorizontalAlignment="Right"
                     Command="{Binding FolderOpenDialogCommand}" CommandParameter="First">
                     参照
                 </Button>
@@ -55,12 +87,12 @@
                 <ComboBox
                     IsEditable="True" 
                     ItemsSource="{Binding SecondFolderPathHistory}"
-                    Text="{Binding SecondFolderPath}"/>
+                    Text="{Binding SecondFolderPath,UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
             <DockPanel>
                 <Button 
                     DockPanel.Dock="Right" 
-                    Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black"
+                    Margin="5" Height="23" Width="100" HorizontalAlignment="Right"
                     Command="{Binding FolderOpenDialogCommand}" CommandParameter="Second">
                     参照
                 </Button>
@@ -69,18 +101,13 @@
                 <Label 
                     Style="{StaticResource TitleLabelStyle}" 
                     Content="フィルタ パターン" />
-                <ComboBox
-                    IsEditable="True" 
-                    ItemsSource="{Binding FilterHistory}"
+                <TextBox
                     Text="{Binding Filter}"/>
-            </DockPanel>
-            <DockPanel>
-                <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black">選択</Button>
             </DockPanel>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black" Command="{Binding OkCommand}">OK</Button>
-            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Background="White" Foreground="Black" Command="{Binding CancelCommand}">キャンセル</Button>
+            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Command="{Binding OkCommand}">OK</Button>
+            <Button DockPanel.Dock="Right" Margin="5" Height="23" Width="100" HorizontalAlignment="Right" Command="{Binding CancelCommand}">キャンセル</Button>
         </StackPanel>
     </DockPanel>
 </UserControl>

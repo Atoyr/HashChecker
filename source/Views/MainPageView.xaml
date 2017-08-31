@@ -42,9 +42,9 @@
                 <MenuItem Header="ハッシュ値 比較(_M)" Command="{Binding ExecuteMergeHashCommand,UpdateSourceTrigger=PropertyChanged}"/>
                 <MenuItem Header="閉じる(_C)" Command="Close"/>
             </MenuItem>
-            <MenuItem Header="編集(_E)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
+            <!--<MenuItem Header="編集(_E)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
                 <MenuItem Header="設定(_C)" Command="Close"/>
-            </MenuItem>
+            </MenuItem>-->
             <MenuItem Header="ヘルプ(_F)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
                 <MenuItem Header="バージョン情報(_A)" Command="Close"/>
             </MenuItem>
