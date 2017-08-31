@@ -110,7 +110,7 @@
                 <DataGridTextColumn Header="左 ハッシュ値" Binding="{Binding LeftHash}" />
                 <DataGridTextColumn Header="左 ファイル拡張子" Binding="{Binding LeftExtension}" />
                 <DataGridTextColumn Header="左 最終更新日時" Binding="{Binding LeftUpdateDatetime}" />
-                <DataGridTextColumn Header="右 ファイルサイズ" Binding="{Binding RightSize}" />
+                <DataGridTextColumn Header="左 ファイルサイズ" Binding="{Binding LeftSize}" />
                 <DataGridTextColumn Header="右 ファイルフル名" Binding="{Binding RightFullName}" />
                 <DataGridTextColumn Header="右 フォルダパス" Binding="{Binding RightFullPath}" />
                 <DataGridTextColumn Header="右 ファイル名" Binding="{Binding RightName}" />
