@@ -31,7 +31,7 @@ namespace HashChecker.Models
         public string LeftHash { set => SetProperty(ref leftHash,value); get => leftHash; }
         public string LeftExtension { set; get; } = string.Empty;
         public DateTime? LeftUpdateDatetime { set; get; }
-        public long LeftSize { set; get; } = 0L;
+        public long? LeftSize { set; get; } = 0L;
 
         // 右側
         public string RightFullName { set; get; } = string.Empty;
@@ -41,7 +41,7 @@ namespace HashChecker.Models
         public string RightHash { set => SetProperty(ref rightHash, value); get => rightHash; }
         public string RightExtension { set; get; } = string.Empty;
         public DateTime? RightUpdateDatetime { set; get; }
-        public long RightSize { set; get; } = 0L;
+        public long? RightSize { set; get; } = 0L;
 
         public void UpdateMergeResult()
         {

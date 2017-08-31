@@ -117,7 +117,6 @@
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ShowModalWindowAction.cs" />
     <Compile Include="Common\WindowCloseAction.cs" />
-    <Compile Include="Contexts\ComboBoxContext.cs" />
     <Compile Include="Contexts\StatusBar.cs" />
     <Compile Include="Controls\BasePanel.cs" />
     <Compile Include="Enums\CheckErrorType.cs" />
@@ -139,7 +138,6 @@
     <Compile Include="Interfaces\IProgressBarPublisher.cs" />
     <Compile Include="Interfaces\IProgressBarValue.cs" />
     <Compile Include="Interfaces\IMessageValue.cs" />
-    <Compile Include="Models\FileComboBoxValue.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\MergeData.cs" />
     <Compile Include="Models\SystemSetting.cs" />
@@ -156,6 +154,12 @@
     </Compile>
     <Compile Include="Views\MenuOpenView.xaml.cs">
       <DependentUpon>MenuOpenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResultPageView.xaml.cs">
+      <DependentUpon>ResultPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResultWindow.xaml.cs">
+      <DependentUpon>ResultWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
@@ -193,6 +197,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MenuOpenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ResultPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ResultWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

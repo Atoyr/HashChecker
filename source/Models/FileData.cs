@@ -25,7 +25,7 @@ namespace HashChecker.Models
             {
                 FullName = fi.FullName,
                 FullPath = System.IO.Path.GetDirectoryName(fi.FullName),
-                Path = System.IO.Path.GetDirectoryName(fi.FullName).Replace(folderPath, string.Empty),
+                Path = fi.FullName.Replace(folderPath, string.Empty),
                 Name = System.IO.Path.GetFileName(fi.FullName),
                 Extension = fi.Extension,
                 UpdateDatetime = fi.LastWriteTime,
