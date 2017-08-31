@@ -28,7 +28,7 @@ namespace HashChecker.Logics
                 {
                     FullName = fi.FullName,
                     FullPath = Path.GetDirectoryName(fi.FullName),
-                    Path = Path.GetDirectoryName(fi.FullName).Replace(folderPath, string.Empty),
+                    Path = fi.FullName.Replace(folderPath, string.Empty),
                     Name = Path.GetFileName(fi.FullName),
                     Extension = fi.Extension,
                     UpdateDatetime = fi.LastWriteTime,
