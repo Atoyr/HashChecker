@@ -16,7 +16,7 @@ namespace HashChecker.Models
         public string Name { set; get; } = string.Empty;
         public string Hash { set; get; } = string.Empty;
         public string Extension { set; get; } = string.Empty;
-        public DateTime UpdateDatetime { set; get; } = DateTime.MinValue;
+        public DateTime? UpdateDatetime { set; get; } = null;
         public long Size { set; get; } = 0L;
 
         public static IEnumerable<FileData> GetFileEnumerate(string folderPath, string searchPattern)

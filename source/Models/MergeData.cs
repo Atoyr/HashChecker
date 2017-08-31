@@ -2,6 +2,7 @@
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,17 +45,17 @@ namespace HashChecker.Models
 
         public void UpdateMergeResult()
         {
-            if(string.IsNullOrEmpty(LeftFullName) && string.IsNullOrEmpty(RightFullName))
+            if(!File.Exists(LeftFullName) && !File.Exists(RightFullName))
             {
                 MergeResult = MergeResult.None;
                 return;
             }
-            if (string.IsNullOrEmpty(LeftFullName))
+            if (!File.Exists(LeftFullName))
             {
                 MergeResult = MergeResult.LeftFileNotFound;
                 return;
             }
-            if (string.IsNullOrEmpty(RightFullName))
+            if (!File.Exists(RightFullName))
             {
                 MergeResult = MergeResult.RightFileNotFound;
                 return;

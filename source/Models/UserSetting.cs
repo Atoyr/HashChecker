@@ -34,6 +34,9 @@ namespace HashChecker.Models
         [DataMember(Name = "SecondFolderPath")]
         public ObservableCollection<string> SecondFolderPathList { set => this["SecondFolderPathList"] = value; get => (ObservableCollection<string>)this["SecondFolderPathList"]; }
 
+        /// <summary>
+        /// 未実装
+        /// </summary>
         [UserScopedSetting()]
         [SettingsSerializeAs(SettingsSerializeAs.Binary)]
         [DataMember(Name = "Filter")]

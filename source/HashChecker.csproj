@@ -117,6 +117,7 @@
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ShowModalWindowAction.cs" />
     <Compile Include="Common\WindowCloseAction.cs" />
+    <Compile Include="Contexts\ComboBoxContext.cs" />
     <Compile Include="Contexts\StatusBar.cs" />
     <Compile Include="Controls\BasePanel.cs" />
     <Compile Include="Enums\CheckErrorType.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Interfaces\IProgressBarPublisher.cs" />
     <Compile Include="Interfaces\IProgressBarValue.cs" />
     <Compile Include="Interfaces\IMessageValue.cs" />
+    <Compile Include="Models\FileComboBoxValue.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Models\MergeData.cs" />
     <Compile Include="Models\SystemSetting.cs" />
