@@ -20,6 +20,9 @@
         <prism:InteractionRequestTrigger SourceObject="{Binding OpenForderNotificationRequest}">
             <common:ShowModalWindowAction WindowType="{x:Type local:MenuOpenWindow}" />
         </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding OpenResultNotificationRequest}">
+            <common:ShowModalWindowAction WindowType="{x:Type local:ResultWindow}" />
+        </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
     <localControls:BasePanel.CommandBindings>
         <CommandBinding Command="Close" Executed="Close_Executed" />
@@ -40,6 +43,7 @@
             <MenuItem Header="ファイル(_F)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
                 <MenuItem Header="開く(_O)" Name="PART_MenuOpen" Command="{Binding ShowWindowCommand,UpdateSourceTrigger=PropertyChanged}"/>
                 <MenuItem Header="ハッシュ値 比較(_M)" Command="{Binding ExecuteMergeHashCommand,UpdateSourceTrigger=PropertyChanged}"/>
+                <MenuItem Header="比較結果(_R)" Command="{Binding ShowResultWindowCommand,UpdateSourceTrigger=PropertyChanged}"/>
                 <MenuItem Header="閉じる(_C)" Command="Close"/>
             </MenuItem>
             <!--<MenuItem Header="編集(_E)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
