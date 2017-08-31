@@ -65,6 +65,7 @@
             CanUserDeleteRows="False"
             CanUserResizeColumns="True"
             CanUserResizeRows="False"
+            CanUserReorderColumns="True"
             HeadersVisibility="All"
             ItemsSource="{Binding GridData}">
             <DataGrid.Resources>
