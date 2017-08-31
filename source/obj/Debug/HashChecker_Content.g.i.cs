@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resouces/icon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("license/metroradiancelicense.txt")]
 
 

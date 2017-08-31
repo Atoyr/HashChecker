@@ -23,6 +23,9 @@
         <prism:InteractionRequestTrigger SourceObject="{Binding OpenResultNotificationRequest}">
             <common:ShowModalWindowAction WindowType="{x:Type local:ResultWindow}" />
         </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding OpenVersionNotificationRequest}">
+            <common:ShowModalWindowAction WindowType="{x:Type local:VersionWindow}" />
+        </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
     <localControls:BasePanel.CommandBindings>
         <CommandBinding Command="Close" Executed="Close_Executed" />
@@ -50,7 +53,7 @@
                 <MenuItem Header="設定(_C)" Command="Close"/>
             </MenuItem>-->
             <MenuItem Header="ヘルプ(_F)" Background="#AA888888" Height="{Binding Height ,ElementName=PART_MenuBar}">
-                <MenuItem Header="バージョン情報(_A)" Command="Close"/>
+                <MenuItem Header="バージョン情報(_A)" Command="{Binding ShowVersionWindowCommand,UpdateSourceTrigger=PropertyChanged}"/>
             </MenuItem>
         </Menu>
         <DataGrid 
