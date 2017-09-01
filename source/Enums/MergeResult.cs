@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashChecker.Enums
 {
-    public enum MergeResult
+    public enum comparedResult
     {
         None = 0,
         Exists = 1,
@@ -18,21 +18,21 @@ namespace HashChecker.Enums
 
     public static class MergeResultEx
     {
-        public static string GetMergeResult(this MergeResult mergeResult)
+        public static string GetcomparedResult(this comparedResult mergeResult)
         {
             switch (mergeResult)
             {
-                case MergeResult.Exists:
+                case comparedResult.Exists:
                     return "一致";
-                case MergeResult.NotExists:
+                case comparedResult.NotExists:
                     return "不一致";
-                case MergeResult.LeftFileNotFound:
+                case comparedResult.LeftFileNotFound:
                     return "左ファイルなし";
-                case MergeResult.RightFileNotFound:
+                case comparedResult.RightFileNotFound:
                     return "右ファイルなし";
-                case MergeResult.None:
+                case comparedResult.None:
                     return "ファイルなし";
-                case MergeResult.NotAction:
+                case comparedResult.NotAction:
                     return "未比較";
                 default:
                     return string.Empty;

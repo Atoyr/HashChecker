@@ -29,21 +29,21 @@ namespace HashChecker.ViewModels
 
         public ICommand ShowVersionWindowCommand { get; private set; }
 
-        private ICommand executeMergeHashCommand;
-        public ICommand ExecuteMergeHashCommand { get => executeMergeHashCommand; private set => SetProperty(ref executeMergeHashCommand,value); }
+        private ICommand executeComparisonHashCommand;
+        public ICommand ExecuteComparisonHashCommand { get => executeComparisonHashCommand; private set => SetProperty(ref executeComparisonHashCommand,value); }
 
-        private ObservableCollection<MergeData> gridData;
-        public ObservableCollection<MergeData> GridData { set => SetProperty(ref gridData, value); get => gridData; }
+        private ObservableCollection<ComparisonData> gridData;
+        public ObservableCollection<ComparisonData> GridData { set => SetProperty(ref gridData, value); get => gridData; }
 
-        private bool isMerged = false;
+        private bool isCompared = false;
         private bool IsMerged
         {
             set
             {
-                isMerged = value;
+                isCompared = value;
                 if (ShowResultWindowCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
             }
-            get => isMerged;
+            get => isCompared;
         }
 
         public override void Initialize()
@@ -79,11 +79,11 @@ namespace HashChecker.ViewModels
                 });
             }, () => true);
 
-            this.ExecuteMergeHashCommand = new DelegateCommand(async () =>
+            this.ExecuteComparisonHashCommand = new DelegateCommand(async () =>
             {
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
 
-                await BindingGridData.ExecuteHashMergeAsync
+                await BindingGridData.ExecuteHashComparisonAsync
                     (GridData
                     ,(maxValue) => EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = false, ProgressBarVisibility = Visibility.Visible, Maximum = maxValue, Minimum = 0, Value = 0 })
                     ,(index) => { }
@@ -92,12 +92,12 @@ namespace HashChecker.ViewModels
                     );
 
                 IsMerged = true;
-                int NotActionCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.NotAction);
-                int ExistsCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.Exists);
-                int NotExistsCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.NotExists);
-                int LeftFileNotFoundCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.LeftFileNotFound);
-                int RightFileNotFoundCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.RightFileNotFound);
-                int NoneCount = GridData.Count(x => x.MergeResult == Enums.MergeResult.None);
+                int NotActionCount = GridData.Count(x => x.ComparedResult == Enums.comparedResult.NotAction);
+                int ExistsCount = GridData.Count(x => x.ComparedResult == Enums.comparedResult.Exists);
+                int NotExistsCount = GridData.Count(x => x.ComparedResult == Enums.comparedResult.NotExists);
+                int LeftFileNotFoundCount = GridData.Count(x => x.ComparedResult == Enums.comparedResult.LeftFileNotFound);
+                int RightFileNotFoundCount = GridData.Count(x => x.ComparedResult == Enums.comparedResult.RightFileNotFound);
+                int NoneCount = GridData.Count(x => x.ComparedResult == Enums.comparedResult.None);
 
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue
                 { Message = $"比較結果　一致：{ExistsCount}件　不一致：{NotExistsCount}件　左ファイルなし：{LeftFileNotFoundCount}件　右ファイルなし：{RightFileNotFoundCount}件　ファイルなし：{NoneCount}件　未処理：{NotActionCount}件" });
@@ -113,9 +113,9 @@ namespace HashChecker.ViewModels
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "処理中..." });
                 EventAggregator.GetEvent<ProgressBarChangeEvent>().Publish(new ProgressBarChangeValue { IsIndeterminate = true, ProgressBarVisibility = Visibility.Visible });
             }
-            GridData = new ObservableCollection<MergeData>(BindingGridData.GetMergeList(value.FirstFolderPath, value.SecondFolderPath, value.SearchPattern).OrderBy(x => x.Path));
+            GridData = new ObservableCollection<ComparisonData>(BindingGridData.GetComparisonList(value.FirstFolderPath, value.SecondFolderPath, value.SearchPattern).OrderBy(x => x.Path));
             IsMerged = false;
-            if (ExecuteMergeHashCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
+            if (ExecuteComparisonHashCommand is DelegateCommandBase dcb) dcb.RaiseCanExecuteChanged();
             if (EventAggregator != null)
             {
                 EventAggregator.GetEvent<StatusBarMessageChangeEvent>().Publish(new StatusBarMessageChangeValue { Message = "準備完了" });

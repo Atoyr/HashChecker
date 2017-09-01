@@ -142,7 +142,7 @@
     <Compile Include="Interfaces\IProgressBarValue.cs" />
     <Compile Include="Interfaces\IMessageValue.cs" />
     <Compile Include="Models\FileData.cs" />
-    <Compile Include="Models\MergeData.cs" />
+    <Compile Include="Models\ComparisonData.cs" />
     <Compile Include="Models\SystemSetting.cs" />
     <Compile Include="Models\UserSetting.cs" />
     <Compile Include="Util\FileUtil.cs" />

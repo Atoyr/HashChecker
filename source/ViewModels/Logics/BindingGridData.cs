@@ -18,9 +18,9 @@ namespace HashChecker.Logics
         /// <param name="folderPath"></param>
         /// <param name="searchPattern"></param>
         /// <returns></returns>
-        public static ObservableCollection<FileData> GetFileList(string folderPath, string searchPattern)
+        public static IEnumerable<FileData> GetFileList(string folderPath, string searchPattern)
         {
-            var returnCollection = new ObservableCollection<FileData>();
+            var returnCollection = new List<FileData>();
             if (Directory.Exists(folderPath))
             {
                 var files = new DirectoryInfo(folderPath).EnumerateFiles(searchPattern, SearchOption.AllDirectories);
@@ -46,7 +46,7 @@ namespace HashChecker.Logics
         /// <param name="rightFolderPath"></param>
         /// <param name="searchPattern"></param>
         /// <returns></returns>
-        public static IEnumerable<MergeData> GetMergeList(string leftFolderPath, string rightFolderPath, string searchPattern)
+        public static IEnumerable<ComparisonData> GetComparisonList(string leftFolderPath, string rightFolderPath, string searchPattern)
         {
             try
             {
@@ -56,15 +56,20 @@ namespace HashChecker.Logics
                 // 左外部結合と右外部結合を取得、マージする
                 var leftOuter = FileDataLeftOuterJoin(leftFileList, rightFileList);
                 var rightOuter = FileDataRightOuterJoin(leftFileList, rightFileList);
-                return leftOuter.Union(rightOuter, new MergeDataPathComparer());
+                return leftOuter.Union(rightOuter, new ComparisonDataPathComparer());
             }
             catch(Exception e)
             {
                 System.Diagnostics.EventLog.WriteEntry(
                     e.Source, e.Message,
                     System.Diagnostics.EventLogEntryType.Error);
-                return new ObservableCollection<MergeData>();
+                return new ObservableCollection<ComparisonData>();
             }
+        }
+
+        private static IEnumerable<ComparisonData> FileDataOuterJoin(IEnumerable<FileData> L, IEnumerable<FileData> R)
+        {
+            return new List<ComparisonData>();
         }
 
         /// <summary>
@@ -73,7 +78,7 @@ namespace HashChecker.Logics
         /// <param name="L"></param>
         /// <param name="R"></param>
         /// <returns></returns>
-        private static IEnumerable<MergeData> FileDataLeftOuterJoin(IEnumerable<FileData> L, IEnumerable<FileData> R)
+        private static IEnumerable<ComparisonData> FileDataLeftOuterJoin(IEnumerable<FileData> L, IEnumerable<FileData> R)
         {
             return
                 from l in L
@@ -81,7 +86,7 @@ namespace HashChecker.Logics
                 on new { l.Path, l.Name } equals new { r.Path, r.Name }
                 into temp
                 from r in temp.DefaultIfEmpty(new FileData())
-                select new MergeData
+                select new ComparisonData
                 {
                     Path = l.Path,
                     LeftFullName = l.FullName,
@@ -99,7 +104,7 @@ namespace HashChecker.Logics
                     RightExtension = r == null ? string.Empty : r.Extension,
                     RightUpdateDatetime = r.UpdateDatetime,
                     RightSize = r.Size,
-                    MergeResult = r == null ? Enums.MergeResult.RightFileNotFound : Enums.MergeResult.NotAction
+                    ComparedResult = r == null ? Enums.comparedResult.RightFileNotFound : Enums.comparedResult.NotAction
                 };
         }
 
@@ -109,7 +114,7 @@ namespace HashChecker.Logics
         /// <param name="L"></param>
         /// <param name="R"></param>
         /// <returns></returns>
-        private static IEnumerable<MergeData> FileDataRightOuterJoin(IEnumerable<FileData> L, IEnumerable<FileData> R)
+        private static IEnumerable<ComparisonData> FileDataRightOuterJoin(IEnumerable<FileData> L, IEnumerable<FileData> R)
         {
             return
                 from r in R
@@ -117,7 +122,7 @@ namespace HashChecker.Logics
                 on new { r.Path, r.Name } equals new { l.Path, l.Name }
                 into temp
                 from l in temp.DefaultIfEmpty(new FileData())
-                select new MergeData
+                select new ComparisonData
                 {
                     Path = r.Path,
                     LeftFullName = l == null ? string.Empty : l.FullName,
@@ -135,7 +140,7 @@ namespace HashChecker.Logics
                     RightExtension = r.Extension,
                     RightUpdateDatetime = r.UpdateDatetime,
                     RightSize = r.Size,
-                    MergeResult = l == null ? Enums.MergeResult.LeftFileNotFound : Enums.MergeResult.NotAction
+                    ComparedResult = l == null ? Enums.comparedResult.LeftFileNotFound : Enums.comparedResult.NotAction
                 };
         }
 
@@ -144,32 +149,32 @@ namespace HashChecker.Logics
         {
             fileData.Hash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(fileData.FullName, algorithm));
         }
-        private static void AddHashValue<T>(MergeData mergeData, T algorithm)
+        private static void AddHashValue<T>(ComparisonData ComparisonData, T algorithm)
             where T : HashAlgorithm, new()
         {
-            if (File.Exists(mergeData.LeftFullName)) mergeData.LeftHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(mergeData.LeftFullName, algorithm));
-            if (File.Exists(mergeData.RightFullName)) mergeData.RightHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(mergeData.RightFullName, algorithm));
+            if (File.Exists(ComparisonData.LeftFullName)) ComparisonData.LeftHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(ComparisonData.LeftFullName, algorithm));
+            if (File.Exists(ComparisonData.RightFullName)) ComparisonData.RightHash = HashUtil.ConvertHashString(HashUtil.GetHashFromFile(ComparisonData.RightFullName, algorithm));
         }
-        public async static Task ExecuteHashMergeAsync(IEnumerable<MergeData> mergeDatas)
+        public async static Task ExecuteHashComparisonAsync(IEnumerable<ComparisonData> comparisonDatas)
         {
-            await ExecuteHashMergeAsync(mergeDatas,new Action<int>((i) => { }), new Action<int>((i) => { }), new Action<int>((i) => { }), new Action(() => { }));
+            await ExecuteHashComparisonAsync(comparisonDatas,new Action<int>((i) => { }), new Action<int>((i) => { }), new Action<int>((i) => { }), new Action(() => { }));
         }
 
-        public static Task ExecuteHashMergeAsync(IEnumerable<MergeData> mergeDatas,Action<int> initialAction,Action<int> beginAction,Action<int> endAction ,Action finalyAction)
+        public static Task ExecuteHashComparisonAsync(IEnumerable<ComparisonData> comparisonDatas,Action<int> initialAction,Action<int> beginAction,Action<int> endAction ,Action finalyAction)
         {
             return Task.Run(() =>
             {
-                int maxValue = mergeDatas.Count();
+                int maxValue = comparisonDatas.Count();
                 initialAction(maxValue);
                 int index = 0;
-                foreach (MergeData md in mergeDatas)
+                foreach (ComparisonData md in comparisonDatas)
                 {
                     beginAction(index);
                     // アルゴリズム変えるときはここを変える
                     // Configファイルにもちたかったけど・・・
                     var algo = HashAlgorithm.Create("SHA-1") as SHA1CryptoServiceProvider;
                     AddHashValue(md, algo);
-                    md.UpdateMergeResult();
+                    md.UpdateComparedResult();
                     ++index;
                     endAction(index);
                 }

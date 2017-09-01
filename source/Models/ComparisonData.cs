@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace HashChecker.Models
 {
-    public class MergeData : BindableBase
+    public class ComparisonData : BindableBase
     {
         public string Path { set; get; } = string.Empty;
-        private MergeResult mergeResult = MergeResult.None;
-        public MergeResult MergeResult {
+        private comparedResult comparedResult = comparedResult.None;
+        public comparedResult ComparedResult {
             set
             {
-                SetProperty(ref mergeResult, value);
-                this.RaisePropertyChanged(nameof(this.MergeResultMessage));
+                SetProperty(ref comparedResult, value);
+                this.RaisePropertyChanged(nameof(this.comparedResultMessage));
             }
-            get => mergeResult; }
+            get => comparedResult; }
 
-        public string MergeResultMessage { get => MergeResult.GetMergeResult(); }
+        public string comparedResultMessage { get => ComparedResult.GetcomparedResult(); }
 
         // 左側
         public string LeftFullName { set; get; } = string.Empty;
@@ -43,45 +43,45 @@ namespace HashChecker.Models
         public DateTime? RightUpdateDatetime { set; get; }
         public long? RightSize { set; get; } = 0L;
 
-        public void UpdateMergeResult()
+        public void UpdateComparedResult()
         {
             if(!File.Exists(LeftFullName) && !File.Exists(RightFullName))
             {
-                MergeResult = MergeResult.None;
+                ComparedResult = comparedResult.None;
                 return;
             }
             if (!File.Exists(LeftFullName))
             {
-                MergeResult = MergeResult.LeftFileNotFound;
+                ComparedResult = comparedResult.LeftFileNotFound;
                 return;
             }
             if (!File.Exists(RightFullName))
             {
-                MergeResult = MergeResult.RightFileNotFound;
+                ComparedResult = comparedResult.RightFileNotFound;
                 return;
             }
             if (!string.IsNullOrEmpty(LeftHash) && !string.IsNullOrEmpty(RightHash))
             {
                 if(LeftHash == RightHash)
                 {
-                    MergeResult = MergeResult.Exists;
+                    ComparedResult = comparedResult.Exists;
                 }
                 else
                 {
-                    MergeResult = MergeResult.NotExists;
+                    ComparedResult = comparedResult.NotExists;
                 }
                 return;
             }
-            MergeResult = MergeResult.NotAction;
+            ComparedResult = comparedResult.NotAction;
         }
     }
     /// <summary>
-    /// MergeDataの重複比較用
+    /// ComparisonDataの重複比較用
     /// 
     /// </summary>
-    public class MergeDataPathComparer : IEqualityComparer<MergeData>
+    public class ComparisonDataPathComparer : IEqualityComparer<ComparisonData>
     {
-        public bool Equals(MergeData x, MergeData y)
+        public bool Equals(ComparisonData x, ComparisonData y)
         {
             if (x == null && y == null)
                 return true;
@@ -96,7 +96,7 @@ namespace HashChecker.Models
                 return false;
         }
 
-        public int GetHashCode(MergeData obj)
+        public int GetHashCode(ComparisonData obj)
         {
             if (obj == null) return 0;
             string hCode = obj.LeftFullName + obj.RightFullName;
