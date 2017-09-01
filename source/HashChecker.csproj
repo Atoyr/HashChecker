@@ -152,6 +152,7 @@
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="ViewModels\MenuOpenViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\VersionViewModel.cs" />
     <Compile Include="Views\MenuOpenWindow.xaml.cs">
       <DependentUpon>MenuOpenWindow.xaml</DependentUpon>
     </Compile>
@@ -169,6 +170,12 @@
     </Compile>
     <Compile Include="Views\SubWindow.xaml.cs">
       <DependentUpon>SubWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VersionView.xaml.cs">
+      <DependentUpon>VersionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VersionWindow.xaml.cs">
+      <DependentUpon>VersionWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\Style.xaml">
       <SubType>Designer</SubType>
@@ -219,6 +226,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\VersionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VersionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -261,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resouces\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="License\MetroRadianceLicense.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
